@@ -15,9 +15,26 @@ execute:
 
 # Introduction
 
-## About me
+## Shannon Pileggi
+
+`r fontawesome::fa("link", fill = "#5B888C")` [pipinghotdata.com](https://www.pipinghotdata.com/)
+
+`r fontawesome::fa("twitter", fill = "#5B888C")` [\@PipingHotData](https://twitter.com/PipingHotData)
+
+`r fontawesome::fa("linkedin", fill = "#5B888C")` [linkedin.com/in/shannon-m-pileggi/](https://www.linkedin.com/in/shannon-m-pileggi/)
+
+`r fontawesome::fa("github", fill = "#5B888C")` [github.com/shannonpileggi](https://github.com/shannonpileggi/)
+
+`r fontawesome::fa("paper-plane", fill = "#5B888C")` [shannon\@pipinghotdata.com](mailto:shannon@pipinghotdata.com)
 
 ## Acknowledgements
+<br>
+<br>
+Workshop materials have been adapted from the 2020 RStudio [What They Forgot To Teach You About R](https://rstats-wtf.github.io/wtf-2020-rsc/) Workshop.
+<br>
+<br>
+<br>
+Quarto slide styling was adapted from Mine Çetinkaya-Rundel's Stat 210 course ([website](https://sta210-s22.github.io/website/), [slide source](https://github.com/sta210-s22/website/tree/main/slides)).
 
 ## Pipe syntax
 
@@ -27,16 +44,14 @@ execute:
 
 ## Slide 2
 
-
 # About lists
-
 
 ## Working with lists {background-color="black"}
 
 ![](img/drink-water.gif)
 
 ::: footer
-[https://media.giphy.com/media/Bqn8Z7xdPCFy0/giphy.gif](https://media.giphy.com/media/Bqn8Z7xdPCFy0/giphy.gif)
+<https://media.giphy.com/media/Bqn8Z7xdPCFy0/giphy.gif>
 :::
 
 # Iterating with purrr
@@ -53,5 +68,3 @@ You can embed code like this:
 ```{r}
 1 + 1
 ```
-
-
