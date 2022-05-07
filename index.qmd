@@ -1,0 +1,57 @@
+---
+title: "Iterating well with purrr"
+author: "Shannon Pileggi"
+footer:  "[Iterating well with purrr](https://github.com/shannonpileggi/iterating-well-with-purrr)"
+logo: "img/purrr-logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+editor: visual
+execute:
+  freeze: auto
+---
+
+# Introduction
+
+## About me
+
+## Acknowledgements
+
+## Pipe syntax
+
+# Iterating without purrr
+
+## Slide 1
+
+## Slide 2
+
+
+# About lists
+
+
+## Working with lists {background-color="black"}
+
+![](img/drink-water.gif)
+
+::: footer
+[https://media.giphy.com/media/Bqn8Z7xdPCFy0/giphy.gif](https://media.giphy.com/media/Bqn8Z7xdPCFy0/giphy.gif)
+:::
+
+# Iterating with purrr
+
+## Slide 1
+
+## Slide 2
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code.
+You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+
