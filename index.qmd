@@ -28,13 +28,33 @@ execute:
 `r fontawesome::fa("paper-plane", fill = "#5B888C")` [shannon\@pipinghotdata.com](mailto:shannon@pipinghotdata.com)
 
 ## Acknowledgements
-<br>
-<br>
+
+<br> 
+Quarto slide styling was adapted from Mine Çetinkaya-Rundel's Stat 210 course ([website](https://sta210-s22.github.io/website/), [slide source](https://github.com/sta210-s22/website/tree/main/slides)).
+<br> 
+<br> 
 Workshop materials have been adapted from the 2020 RStudio [What They Forgot To Teach You About R](https://rstats-wtf.github.io/wtf-2020-rsc/) Workshop.
 <br>
 <br>
-<br>
-Quarto slide styling was adapted from Mine Çetinkaya-Rundel's Stat 210 course ([website](https://sta210-s22.github.io/website/), [slide source](https://github.com/sta210-s22/website/tree/main/slides)).
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
+
+## Checklist
+
+`r fontawesome::fa("check", fill = "#5B888C")` R installed? Pretty recent?
+
+&nbsp;&nbsp;&nbsp;&nbsp; Current version 4.2.0
+
+`r fontawesome::fa("check", fill = "#5B888C")` RStudio installed?
+
+&nbsp;&nbsp;&nbsp;&nbsp; I'm on build 485
+
+`r fontawesome::fa("check", fill = "#5B888C")` Have these packages?
+
+&nbsp;&nbsp;&nbsp;&nbsp; `tidyverse` (includes `purrr`)
+
+&nbsp;&nbsp;&nbsp;&nbsp; `repurrrsive` 
+
+
 
 ## Pipe syntax
 
