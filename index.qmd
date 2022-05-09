@@ -287,7 +287,35 @@ countdown(minutes = 1, bottom = "-10%", right = "-10%")
 ```
 
 
-# About lists
+## More iteration: making strings, cont.
+
+```{r, echo = TRUE}
+year <- 2017:2021
+location <- c("Orlando", "San Diego", "Austin", "San Francisco", "remote")
+```
+
+<brshort>
+
+```{r, echo = TRUE}
+paste0("The ", year, " RStudio Conference was in ", location, ".")
+```
+
+<brshort>
+
+```{r, echo = TRUE}
+glue::glue("The {year} RStudio Conference was in {location}.")
+```
+
+. . .
+
+Some R functions are _vectorized_.
+
+
+# Introducing purrr
+
+## But what if you really need to iterate? {background-color="#343838", position = "center"}
+
+![](img/purrr-logo.png)
 
 ## Working with lists 1 {background-color="black"}
 
@@ -308,15 +336,3 @@ knitr::include_graphics("img/drink-water.gif")
 
 # Iterating with purrr
 
-## Slide 1
-
-## Slide 2
-
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code.
-You can embed code like this:
-
-```{r}
-1 + 1
-```
