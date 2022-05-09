@@ -80,6 +80,9 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 * Advanced R by Hadley Wickham, Ch 9 Functionals [https://adv-r.hadley.nz/functionals.html](https://adv-r.hadley.nz/functionals.html)
 
+* The Joy of Functional Programming (for Data Science) webinar by Hadley Wickham <br>
+[https://www.youtube.com/watch?v=bzUmK0Y07ck](https://www.youtube.com/watch?v=bzUmK0Y07ck)
+
 # Aside on pipes 
 
 ## Pipes
@@ -87,10 +90,6 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 * 2014+ magrittr pipe `%>%` 
 
 * 2021+ (R $\geq$ 4.1.0) native R pipe `|>`
-
-* 2022 Isabella Velásquez Understanding the native R pipe |> <br>
-[https://ivelasq.rbind.io/blog/understanding-the-r-pipe/](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/)
-
 
 ```{r echo=TRUE, eval=FALSE}
 whatever(arg1, arg2, arg3, ...)
@@ -101,6 +100,11 @@ arg1 %>%
 mean(0:10)
 0:10 %>% mean()
 ```
+
+. . .
+
+2022 Isabella Velásquez Understanding the native R pipe |> 
+[https://ivelasq.rbind.io/blog/understanding-the-r-pipe/](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/)
 
 ##
 
@@ -313,11 +317,32 @@ Some R functions are _vectorized_.
 
 # Introducing purrr
 
-## But what if you really need to iterate? {background-color="#343838", position = "center"}
+## But what if you really need to iterate? {background-color="#343838"}
 
 ![](img/purrr-logo.png)
 
-## Working with lists 1 {background-color="black"}
+## Purrr 
+
+[https://purrr.tidyverse.org/](https://purrr.tidyverse.org/)
+
+* `purrr` enhances R’s functional programming toolkit
+
+* a "core" package in the tidyverse meta-package
+
+```{r, eval = FALSE, echo = TRUE}
+install.packages("tidyverse") # <-- install purrr + much more
+library(tidyverse)            # <-- loads purrr + much more
+```
+
+<br>
+
+```{r, eval = FALSE, echo = TRUE}
+install.packages("purrr")     # <-- installs only purrr
+library(purrr)                # <-- loads only purrr
+```
+
+
+# Working with lists 1 {background-color="black"}
 
 ![](img/drink-water.gif)
 
