@@ -2,9 +2,9 @@
   background: inherit;
   position: absolute;
   cursor: pointer;
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1;
-  border-color: #ddd;
+  border-color: #FFFFFF;
   border-width: 3px;
   border-style: solid;
   border-radius: 15px;
@@ -25,21 +25,21 @@
   padding: 0;
 }
 .countdown-digits {
-  color: inherit;
+  color: #7aa81e;
 }
 .countdown.running {
-  border-color: #3C9A5F;
-  background-color: #43AC6A;
+  border-color: #6D971B;
+  background-color: #7aa81e;
 }
 .countdown.running .countdown-digits {
-  color: #102B1A;
+  color: #FFFFFF;
 }
 .countdown.finished {
-  border-color: #D83A20;
-  background-color: #F04124;
+  border-color: #E5906D;
+  background-color: #ffa07a;
 }
 .countdown.finished .countdown-digits {
-  color: #3C1099;
+  color: #FFFFFF;
 }
 .countdown.running.warning {
   border-color: #CFAE24;

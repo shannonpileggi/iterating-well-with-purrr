@@ -1,17 +1,21 @@
 /*-- scss:defaults --*/
-
 // fonts
 @import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
 
 $font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
-$presentation-heading-color: #5B888C;
-$presentation-title-slide-text-align: "left";
+
+$body-bg: #343838;
+$body-color: #FFFFFF;
+$link-color: #C7B41D;
+$presentation-font-size-root: 40px;
+
+// headings
+$h1-font-size: 1.6em !default;
+$h2-font-size: 1.3em !default;
+$h3-font-size: 1.15em !default;
 
 /*-- scss:rules --*/
 
-details>summary {
-  font-size: 0.75em;
-}
 
 .small {
   font-size: 0.75em;
@@ -22,11 +26,11 @@ details>summary {
  }
 
 .reveal .slide .question {
-  border-left: 3px solid #5B888C;
-  padding-left: 0.5em;
+  border-left: 3px solid #7aa81e;
+  padding-left: 1.0em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  background: #D9E3E4;
+  background: #97c71d;
 }
 
 .reveal .slide .poll {
@@ -43,4 +47,40 @@ details>summary {
   margin-bottom: 0.5em;
   padding: 0.5em;
   background: #EBF7FF;
+}
+
+
+.subtitle {
+  color: $link-color;
+  font-size: $h2-font-size;
+  font-family: $presentation-heading-font;
+}
+
+.author {
+  color: $link-color;
+  font-size: $h2-font-size;
+  font-family: $presentation-heading-font;
+}
+
+.footer {
+  color: $link-color;
+  font-family: $presentation-heading-font;
+}
+
+.reveal .slide-number {
+  color: $link-color;
+  font-family: $presentation-heading-font;
+}
+
+.reveal .panel-tabset [role=tab] {
+    font-size: 0.8em;
+}
+
+.reveal .footer {
+    color: $link-color;
+}
+
+
+.center-x{
+    text-align: center;
 }

@@ -5,7 +5,7 @@ footer:  "[Iterating well with purrr](https://github.com/shannonpileggi/iteratin
 logo: "img/purrr-logo.png"
 format: 
   revealjs: 
-    theme: slides.scss
+    theme: [night, slides.scss]
     transition: fade
     slide-number: true
 editor: visual
@@ -18,78 +18,68 @@ library(tidyverse)
 library(countdown)
 ```
 
-
 ```{r font-awesome-color}
 # fill for font awesome icons
-fa_fill <- "#5B888C"
+fa_fill <- "#C7B41D"
 ```
 
 # Introduction
 
 ## Shannon Pileggi
 
-`r fontawesome::fa("link", fill = "#5B888C")` [pipinghotdata.com](https://www.pipinghotdata.com/)
+`r fontawesome::fa("link", fill = fa_fill)` [pipinghotdata.com](https://www.pipinghotdata.com/)
 
-`r fontawesome::fa("twitter", fill = "#5B888C")` [\@PipingHotData](https://twitter.com/PipingHotData)
+`r fontawesome::fa("twitter", fill = fa_fill)` [\@PipingHotData](https://twitter.com/PipingHotData)
 
-`r fontawesome::fa("linkedin", fill = "#5B888C")` [linkedin.com/in/shannon-m-pileggi/](https://www.linkedin.com/in/shannon-m-pileggi/)
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/shannon-m-pileggi/](https://www.linkedin.com/in/shannon-m-pileggi/)
 
-`r fontawesome::fa("github", fill = "#5B888C")` [github.com/shannonpileggi](https://github.com/shannonpileggi/)
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/shannonpileggi](https://github.com/shannonpileggi/)
 
-`r fontawesome::fa("paper-plane", fill = "#5B888C")` [shannon\@pipinghotdata.com](mailto:shannon@pipinghotdata.com)
+`r fontawesome::fa("paper-plane", fill = fa_fill)` [shannon\@pipinghotdata.com](mailto:shannon@pipinghotdata.com)
 
 ## Acknowledgements
 
-<br> 
-Quarto slide styling was adapted from Mine Çetinkaya-Rundel's Stat 210 course ([website](https://sta210-s22.github.io/website/), [slide source](https://github.com/sta210-s22/website/tree/main/slides)).
-<br> 
-<br> 
-Workshop materials have been adapted from the 2020 RStudio [What They Forgot To Teach You About R](https://rstats-wtf.github.io/wtf-2020-rsc/) Workshop.
-<br>
-<br>
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
-
-
-
+<br> Workshop materials have been adapted from the 2020 RStudio [What They Forgot To Teach You About R](https://rstats-wtf.github.io/wtf-2020-rsc/) Workshop.
+<br> <br> This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
 
 ## Checklist
 
 <br>
 
-`r fontawesome::fa("check", fill = fa_fill)` R installed? Pretty recent?
+`r fontawesome::fa("check", fill = fa_fill)` R installed?
+Pretty recent?
 
-&nbsp;&nbsp;&nbsp;&nbsp; Current version 4.2.0
+     Current version 4.2.0
 
 `r fontawesome::fa("check", fill = fa_fill)` RStudio installed?
 
-&nbsp;&nbsp;&nbsp;&nbsp; I'm on build 485
+     I'm on build 485
 
 `r fontawesome::fa("check", fill = fa_fill)` Have these packages?
 
-&nbsp;&nbsp;&nbsp;&nbsp; `tidyverse` (includes `purrr`)
+     `tidyverse` (includes `purrr`)
 
-&nbsp;&nbsp;&nbsp;&nbsp; `repurrrsive` 
+     `repurrrsive`
 
 ## Additional resources
 
-* Jenny Bryan purrr tutorial<br> [https://jennybc.github.io/purrr-tutorial/](https://jennybc.github.io/purrr-tutorial/)
+-   Jenny Bryan purrr tutorial<br> <https://jennybc.github.io/purrr-tutorial/>
 
-* Charlotte Wickham purrr tutorial [https://github.com/cwickham/purrr-tutorial](https://github.com/cwickham/purrr-tutorial)
+-   Charlotte Wickham purrr tutorial<br> <https://github.com/cwickham/purrr-tutorial>
 
-* Jenny Bryan row-oriented workflows workshop [https://github.com/jennybc/row-oriented-workflows](https://github.com/jennybc/row-oriented-workflows)
+-   Jenny Bryan row-oriented workflows workshop<br> <https://github.com/jennybc/row-oriented-workflows>
 
-* Advanced R by Hadley Wickham, Ch 9 Functionals [https://adv-r.hadley.nz/functionals.html](https://adv-r.hadley.nz/functionals.html)
+-   Advanced R by Hadley Wickham, Ch 9 Functionals<br> <https://adv-r.hadley.nz/functionals.html>
 
-* The Joy of Functional Programming (for Data Science) webinar by Hadley Wickham <br>
-[https://www.youtube.com/watch?v=bzUmK0Y07ck](https://www.youtube.com/watch?v=bzUmK0Y07ck)
+-   The Joy of Functional Programming (for Data Science)<br> webinar by Hadley Wickham <br> <https://www.youtube.com/watch?v=bzUmK0Y07ck>
 
-# Aside on pipes 
+# Aside on pipes
 
 ## Pipes
 
-* 2014+ magrittr pipe `%>%` 
+-   2014+ magrittr pipe `%>%`
 
-* 2021+ (R $\geq$ 4.1.0) native R pipe `|>`
+-   2021+ (R $\geq$ 4.1.0) native R pipe `|>`
 
 ```{r echo=TRUE, eval=FALSE}
 whatever(arg1, arg2, arg3, ...)
@@ -103,10 +93,9 @@ mean(0:10)
 
 . . .
 
-2022 Isabella Velásquez Understanding the native R pipe |> 
-[https://ivelasq.rbind.io/blog/understanding-the-r-pipe/](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/)
+<br> 2022 Isabella Velásquez Understanding the native R pipe \|\> <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/>
 
-##
+## R for Data Science: Ch 18 Pipes
 
 ![](img/foo-foo.png)
 
@@ -121,34 +110,40 @@ mean(0:10)
 ```{r, echo = TRUE}
 library(gapminder)
 library(tidyverse)
-```
-
-:::: {.columns}
-
-::: {.column width="70%"}
-
-```{r, echo = TRUE}
 gapminder
 ```
 
+::: footer
+Hans Rosling discusses Gapminder data<br> 
+[https://www.youtube.com/watch?v=hVimVzgtD6w](https://www.youtube.com/watch?v=hVimVzgtD6w)
 :::
 
-::: {.column width="30%"}
+## Gapminder life expectancy
 
-```{r, echo = TRUE}
+```{r}
 gapminder %>% 
-  count(continent)
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_line(aes(group = country), color = "white") +
+  facet_wrap(~ continent, ncol = 5) +
+  stat_summary(geom = "line", fun = mean, color = "#C7B41D", lwd = 1.5) +
+  scale_x_continuous(breaks = seq(1950, 2010, by = 15)) +
+  theme_dark() +
+  theme(
+    strip.text = element_text(size = 15),
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 15)
+  )
 ```
 
-:::
-
-::::
 
 ## 
 
 ::: question
-What am I doing? Are there mistakes?
+What am I doing?
+Are there mistakes?
 :::
+
+<br>
 
 ```{r, echo = TRUE, eval = FALSE}
 africa <- gapminder[gapminder$continent == "Africa", ]
@@ -173,22 +168,33 @@ cbind(
 ```
 
 ```{r}
-countdown(minutes = 1, bottom = "30%", right = "-10%")
+countdown(
+  minutes = 1,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  bottom = "-20%"
+  )
 ```
 
 ## Discussion
 
 ::: question
+1.  What are the drawbacks of this code?
 
-1. What are the drawbacks of this code?
-
-2. How would you do it instead?
+2.  How would you do it instead?
 :::
 
 ```{r}
 countdown(minutes = 1)
 ```
-
 
 ## An alternative solution
 
@@ -200,10 +206,8 @@ gapminder %>%
 
 . . .
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 `group_by` approach
 
 ```{r}
@@ -211,13 +215,9 @@ gapminder %>%
  group_by(continent) %>%
  summarize(max_minus_min = max(lifeExp) - min(lifeExp))
 ```
-
-
 :::
 
-
 ::: {.column width="50%"}
-
 previous approach
 
 ```{r}
@@ -242,26 +242,7 @@ cbind(
   max_minus_min = c(africa_mm, americas_mm, asia_mm, europe_mm, oceania_mm)
   )
 ```
-
 :::
-
-::::
-
-## More iteration: plotting
-
-```{r}
-gapminder %>% 
-  ggplot(aes(x = year, y = gdpPercap)) +
-  geom_line(aes(group = country), color = "gray") +
-  facet_wrap(~ continent, ncol = 5) +
-  stat_summary(geom = "line", fun = mean, color = "blue", lwd = 1.5) +
-  scale_y_continuous(labels=scales::dollar_format()) +
-  theme_bw()
-```
-
-
-::: {.notes}
-Two sources of iteration: countries and continents
 :::
 
 ## More iteration: making strings
@@ -281,15 +262,13 @@ conf
 
 . . .
 
-
 ::: question
 Can you think of other ways to do this?
 :::
 
 ```{r}
-countdown(minutes = 1, bottom = "-10%", right = "-10%")
+countdown(minutes = 0, seconds = 30, bottom = "-10%", right = "-10%")
 ```
-
 
 ## More iteration: making strings, cont.
 
@@ -312,22 +291,27 @@ glue::glue("The {year} RStudio Conference was in {location}.")
 
 . . .
 
-Some R functions are _vectorized_.
-
+Some R functions are *vectorized*.
 
 # Introducing purrr
 
-## But what if you really need to iterate? {background-color="#343838"}
+## But what if you really need to iterate? {.center .center-x}
 
-![](img/purrr-logo.png)
+<br>
 
-## Purrr 
+```{r, out.width="20%"}
+knitr::include_graphics("img/purrr-logo.png")
+```
 
-[https://purrr.tidyverse.org/](https://purrr.tidyverse.org/)
+## `purrr`
 
-* `purrr` enhances R’s functional programming toolkit
+<https://purrr.tidyverse.org/>
 
-* a "core" package in the tidyverse meta-package
+- `purrr` enhances R's functional programming toolkit
+
+- a "core" package in the tidyverse meta-package
+
+<br>
 
 ```{r, eval = FALSE, echo = TRUE}
 install.packages("tidyverse") # <-- install purrr + much more
@@ -341,15 +325,91 @@ install.packages("purrr")     # <-- installs only purrr
 library(purrr)                # <-- loads only purrr
 ```
 
+## `purrr` vs `apply`
 
-# Working with lists {background-color="#343838"}
+- purrr is an alternative to "apply" functions
+
+- `purrr::map()` ≈ `base::lapply()`
+
+![](img/tutorial-purrr-base.png)
+
+
+
+::: footer
+[https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html](https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html)
+:::
+
+## test
+
+```{r, echo=TRUE, eval=FALSE}
+library(purrr)
+library(repurrrsive)
+help(package = "repurrrsive")
+```
+
+insert logos
+
+## Working with lists
 
 ![](img/drink-water.gif)
-
 
 ::: footer
 <https://media.giphy.com/media/Bqn8Z7xdPCFy0/giphy.gif>
 :::
 
-# Iterating with purrr
+## Live coding
 
+1. How many elements are in `got_chars`?
+
+2. Who is the 9th person listed in `got_chars`? What information is given for this person?
+
+3. What is the difference between `got_chars[9]` and `got_chars[[9]]`? 
+
+## List exploration
+
+
+```{r, echo = TRUE, eval = FALSE}
+str(x, list.len = ?, max.level = ?)
+
+x[i]
+
+x[[i]]
+
+str(x[[i]], ...)
+
+View(x) # in RStudio
+```
+
+## Train 1
+
+## Train 2
+
+## Train 3
+
+## Another list analogy
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+`x`
+
+![](img/pepper-1.png) 
+:::
+
+::: {.column width="33%"}
+
+`x[i]`
+
+![](img/pepper-2.png) 
+:::
+
+::: {.column width="33%"}
+`x[[i]]`
+
+![](img/pepper-3.png) 
+:::
+
+::::
+
+# Iterating with purrr
