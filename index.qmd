@@ -342,18 +342,10 @@ library(purrr)                # <-- loads only purrr
 ```
 
 
-# Working with lists 1 {background-color="black"}
+# Working with lists {background-color="#343838"}
 
 ![](img/drink-water.gif)
 
-
-
-## Working with lists 2 {background-color="black"}
-
-
-```{r}
-knitr::include_graphics("img/drink-water.gif")
-```
 
 ::: footer
 <https://media.giphy.com/media/Bqn8Z7xdPCFy0/giphy.gif>

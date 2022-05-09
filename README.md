@@ -1,3 +1,7 @@
+# Slides
+
+https://shannonpileggi.github.io/iterating-well-with-purrr/
+
 # Iterating Well With Purrr
 
 An R-Ladies Rabat workshop.
