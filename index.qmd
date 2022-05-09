@@ -13,6 +13,17 @@ execute:
   freeze: auto
 ---
 
+```{r}
+library(tidyverse)
+library(countdown)
+```
+
+
+```{r font-awesome-color}
+# fill for font awesome icons
+fa_fill <- "#5B888C"
+```
+
 # Introduction
 
 ## Shannon Pileggi
@@ -38,37 +49,258 @@ Workshop materials have been adapted from the 2020 RStudio [What They Forgot To 
 <br>
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
 
+
+
+
 ## Checklist
 
-`r fontawesome::fa("check", fill = "#5B888C")` R installed? Pretty recent?
+<br>
+
+`r fontawesome::fa("check", fill = fa_fill)` R installed? Pretty recent?
 
 &nbsp;&nbsp;&nbsp;&nbsp; Current version 4.2.0
 
-`r fontawesome::fa("check", fill = "#5B888C")` RStudio installed?
+`r fontawesome::fa("check", fill = fa_fill)` RStudio installed?
 
 &nbsp;&nbsp;&nbsp;&nbsp; I'm on build 485
 
-`r fontawesome::fa("check", fill = "#5B888C")` Have these packages?
+`r fontawesome::fa("check", fill = fa_fill)` Have these packages?
 
 &nbsp;&nbsp;&nbsp;&nbsp; `tidyverse` (includes `purrr`)
 
 &nbsp;&nbsp;&nbsp;&nbsp; `repurrrsive` 
 
+## Additional resources
+
+* Jenny Bryan purrr tutorial<br> [https://jennybc.github.io/purrr-tutorial/](https://jennybc.github.io/purrr-tutorial/)
+
+* Charlotte Wickham purrr tutorial [https://github.com/cwickham/purrr-tutorial](https://github.com/cwickham/purrr-tutorial)
+
+* Jenny Bryan row-oriented workflows workshop [https://github.com/jennybc/row-oriented-workflows](https://github.com/jennybc/row-oriented-workflows)
+
+* Advanced R by Hadley Wickham, Ch 9 Functionals [https://adv-r.hadley.nz/functionals.html](https://adv-r.hadley.nz/functionals.html)
+
+# Aside on pipes 
+
+## Pipes
+
+* 2014+ magrittr pipe `%>%` 
+
+* 2021+ (R $\geq$ 4.1.0) native R pipe `|>`
+
+* 2022 Isabella Velásquez Understanding the native R pipe |> <br>
+[https://ivelasq.rbind.io/blog/understanding-the-r-pipe/](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/)
 
 
-## Pipe syntax
+```{r echo=TRUE, eval=FALSE}
+whatever(arg1, arg2, arg3, ...)
+
+arg1 %>% 
+  whatever(arg2, arg3)
+
+mean(0:10)
+0:10 %>% mean()
+```
+
+##
+
+![](img/foo-foo.png)
+
+::: footer
+<https://r4ds.had.co.nz/pipes.html#pipes>
+:::
 
 # Iterating without purrr
 
-## Slide 1
+## Gapminder example
 
-## Slide 2
+```{r, echo = TRUE}
+library(gapminder)
+library(tidyverse)
+```
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+```{r, echo = TRUE}
+gapminder
+```
+
+:::
+
+::: {.column width="30%"}
+
+```{r, echo = TRUE}
+gapminder %>% 
+  count(continent)
+```
+
+:::
+
+::::
+
+## 
+
+::: question
+What am I doing? Are there mistakes?
+:::
+
+```{r, echo = TRUE, eval = FALSE}
+africa <- gapminder[gapminder$continent == "Africa", ]
+africa_mm <- max(africa$lifeExp) - min(africa$lifeExp)
+
+americas <- gapminder[gapminder$continent == "Americas", ]
+americas_mm <- max(americas$lifeExp) - min(americas$lifeExp)
+
+asia <- gapminder[gapminder$continent == "Asia", ]
+asia_mm <- max(asia$lifeExp) - min(africa$lifeExp)
+
+europe <- gapminder[gapminder$continent == "Europe", ]
+europe_mm <- max(europe$lifeExp) - min(europe$lifeExp)
+
+oceania <- gapminder[gapminder$continent == "Oceania", ]
+oceania_mm <- max(europe$lifeExp) - min(oceania$lifeExp)
+
+cbind(
+  continent = c("Africa", "Asias", "Europe", "Oceania"),
+  max_minus_min = c(africa_mm, americas_mm, asia_mm, europe_mm, oceania_mm)
+  )
+```
+
+```{r}
+countdown(minutes = 1, bottom = "30%", right = "-10%")
+```
+
+## Discussion
+
+::: question
+
+1. What are the drawbacks of this code?
+
+2. How would you do it instead?
+:::
+
+```{r}
+countdown(minutes = 1)
+```
+
+
+## An alternative solution
+
+```{r, echo = TRUE, eval=FALSE}
+gapminder %>%
+ group_by(continent) %>%
+ summarize(max_minus_min = max(lifeExp) - min(lifeExp))
+```
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+`group_by` approach
+
+```{r}
+gapminder %>%
+ group_by(continent) %>%
+ summarize(max_minus_min = max(lifeExp) - min(lifeExp))
+```
+
+
+:::
+
+
+::: {.column width="50%"}
+
+previous approach
+
+```{r}
+library(gapminder)
+africa <- gapminder[gapminder$continent == "Africa", ]
+africa_mm <- max(africa$lifeExp) - min(africa$lifeExp)
+
+americas <- gapminder[gapminder$continent == "Americas", ]
+americas_mm <- max(americas$lifeExp) - min(americas$lifeExp)
+
+asia <- gapminder[gapminder$continent == "Asia", ]
+asia_mm <- max(asia$lifeExp) - min(africa$lifeExp)
+
+europe <- gapminder[gapminder$continent == "Europe", ]
+europe_mm <- max(europe$lifeExp) - min(europe$lifeExp)
+
+oceania <- gapminder[gapminder$continent == "Oceania", ]
+oceania_mm <- max(europe$lifeExp) - min(oceania$lifeExp)
+
+cbind(
+  continent = c("Africa", "Asias", "Europe", "Oceania"),
+  max_minus_min = c(africa_mm, americas_mm, asia_mm, europe_mm, oceania_mm)
+  )
+```
+
+:::
+
+::::
+
+## More iteration: plotting
+
+```{r}
+gapminder %>% 
+  ggplot(aes(x = year, y = gdpPercap)) +
+  geom_line(aes(group = country), color = "gray") +
+  facet_wrap(~ continent, ncol = 5) +
+  stat_summary(geom = "line", fun = mean, color = "blue", lwd = 1.5) +
+  scale_y_continuous(labels=scales::dollar_format()) +
+  theme_bw()
+```
+
+
+::: {.notes}
+Two sources of iteration: countries and continents
+:::
+
+## More iteration: making strings
+
+```{r, echo = TRUE}
+year <- 2017:2021
+location <- c("Orlando", "San Diego", "Austin", "San Francisco", "remote")
+
+conf <- rep_len("", length(year))
+for (i in seq_along(conf)) {
+ conf[i] <- paste0("The ", year[i], " RStudio Conference was in ", location[i], ".")
+}
+conf
+```
+
+<br>
+
+. . .
+
+
+::: question
+Can you think of other ways to do this?
+:::
+
+```{r}
+countdown(minutes = 1, bottom = "-10%", right = "-10%")
+```
+
 
 # About lists
 
-## Working with lists {background-color="black"}
+## Working with lists 1 {background-color="black"}
 
 ![](img/drink-water.gif)
+
+
+
+## Working with lists 2 {background-color="black"}
+
+
+```{r}
+knitr::include_graphics("img/drink-water.gif")
+```
 
 ::: footer
 <https://media.giphy.com/media/Bqn8Z7xdPCFy0/giphy.gif>
