@@ -447,6 +447,7 @@
 <li><p>2014+ magrittr pipe <code>%&gt;%</code></p></li>
 </ul>
 <p>2022 Isabella Velásquez Understanding the native R pipe |&gt; <a href="https://ivelasq.rbind.io/blog/understanding-the-r-pipe/" class="uri">https://ivelasq.rbind.io/blog/understanding-the-r-pipe/</a></p>
+<div class="fragment">
 <p><brshort></brshort></p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -465,7 +466,7 @@
 </div>
 </div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:45%;">
+</div><p>. . .</p><div class="column" style="width:45%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">mean</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>)</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
@@ -478,6 +479,7 @@
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>mtcars <span class="sc">%&gt;%</span> </span>
 <span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -497,6 +499,7 @@
 <li><p>can help to avoid name conflicts (e.g., <code>MASS::select()</code>)</p></li>
 <li><p>does not require <code>library(dplyr)</code></p></li>
 </ul>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
@@ -509,12 +512,13 @@
 </div>
 </div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:50%;">
+</div><p>. . .</p><div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(mtcars, mpg, cyl) </span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
 <span id="cb6-3"><a href="#cb6-3"></a>mtcars <span class="sc">%&gt;%</span> </span>
 <span id="cb6-4"><a href="#cb6-4"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -583,7 +587,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6287f300" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
+<div class="countdown" id="timer_62880705" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -599,7 +603,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6287ef82" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_62880795" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -644,8 +648,8 @@
 </div>
 </div>
 </section>
-<section id="more-iteration-making-strings" class="slide level2">
-<h2>More iteration: making strings</h2>
+<section id="more-iteration" class="slide level2">
+<h2>More iteration</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>location <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Orlando"</span>, <span class="st">"San Diego"</span>, <span class="st">"Austin"</span>, <span class="st">"San Francisco"</span>, <span class="st">"remote"</span>)</span>
@@ -674,15 +678,15 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6287f324" style="right:-10%;bottom:-10%;" data-warnwhen="0">
+<div class="countdown" id="timer_6288062e" style="right:-10%;bottom:-10%;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="more-iteration-making-strings-cont." class="slide level2">
-<h2>More iteration: making strings, cont.</h2>
+<section id="more-iteration-cont." class="slide level2">
+<h2>More iteration, cont.</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>location <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Orlando"</span>, <span class="st">"San Diego"</span>, <span class="st">"Austin"</span>, <span class="st">"San Francisco"</span>, <span class="st">"remote"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

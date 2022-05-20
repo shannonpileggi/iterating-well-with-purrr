@@ -82,6 +82,8 @@ Pretty recent?
 
 2022 Isabella Velásquez Understanding the native R pipe \|\> <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/>
 
+. . .
+
 <brshort>
 
 :::: {.columns}
@@ -110,6 +112,9 @@ arg1 %>%
 ::: {.column width="5%"}
 
 :::
+
+. . .
+
 
 ::: {.column width="45%"}
 
@@ -152,6 +157,7 @@ mtcars %>%
  
  + does not require `library(dplyr)`
 
+. . .
 
 :::: {.columns}
 
@@ -171,6 +177,8 @@ mtcars %>%
 ::: {.column width="5%"}
 
 :::
+
+. . .
 
 ::: {.column width="50%"}
 
@@ -327,7 +335,7 @@ cbind(
 :::
 :::
 
-## More iteration: making strings
+## More iteration
 
 ```{r, eval = FALSE, echo = TRUE}
 year <- 2017:2021
@@ -365,7 +373,7 @@ Can you think of other ways to do this?
 countdown(minutes = 0, seconds = 30, bottom = "-10%", right = "-10%")
 ```
 
-## More iteration: making strings, cont.
+## More iteration, cont.
 
 ```{r, echo = TRUE}
 year <- 2017:2021
