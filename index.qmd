@@ -469,7 +469,7 @@ help(package = "repurrrsive")
 
 :::: 
 
-## Lists
+## Get comfortable with lists
 
 ![](img/list-vector.png)
 
@@ -532,22 +532,37 @@ View(x) # in RStudio
 
 `x`
 
-![](img/pepper-1.png) 
+![](img/pepper-1.jpg) 
 :::
+
+. . .
 
 ::: {.column width="33%"}
 
 `x[i]`
 
-![](img/pepper-2.png) 
+![](img/pepper-2.jpg) 
 :::
+
+. . .
+
 
 ::: {.column width="33%"}
 `x[[i]]`
 
-![](img/pepper-3.png) 
+![](img/pepper-3.jpg) 
 :::
 
 ::::
+
+::: footer
+<https://r4ds.had.co.nz/vectors.html?q=list#lists-of-condiments>
+:::
+
+::: {.notes}
+If this pepper shaker is your list x, then, x[1] is a pepper shaker containing a single pepper packet.
+x[2] would look the same, but would contain the second packet. x[1:2] would be a pepper shaker containing two pepper packets.
+x[[1]] is the pepper packet.
+:::
 
 # Iterating with purrr
