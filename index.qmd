@@ -518,11 +518,51 @@ str(x[[i]], ...)
 View(x) # in RStudio
 ```
 
-## Train 1
+## Subsetting lists
 
-## Train 2
+![](img/train-1.png)
 
-## Train 3
+. . . 
+
+![](img/train-2.png)
+
+. . .
+
+`[`  returns a smaller list; `[[` returns contents in the list
+
+::: footer
+<https://adv-r.hadley.nz/subsetting.html#subset-single>
+:::
+
+::: {.notes}
+The train carrying objects is a list named x.
+x[1] is a train with the first car
+x[[1]] is the contents of car 1
+:::
+
+## Subsetting lists, cont. {visibility="hidden"}
+
+
+![](img/train-3.png)
+
+::: footer
+<https://adv-r.hadley.nz/subsetting.html#subset-single>
+:::
+
+::: {.notes}
+got_chars[[0]]
+#> Error in got_chars[[0]]: attempt to select less than one element in get1index <real>
+
+[[ is asking for one specific element either by position or by name
+and apparently it is implemented in such a way that errors for [[0]]
+
+got_chars[0]
+#> list()
+
+whereas [ is asking for a sub-list
+and apparently it is implemented in such a way that [ is ok
+:::
+
 
 ## Another list analogy
 
