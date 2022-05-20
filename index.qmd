@@ -6,6 +6,7 @@ logo: "img/purrr-logo.png"
 format: 
   revealjs: 
     theme: [night, slides.scss]
+    highlight-style: a11y
     transition: fade
     slide-number: true
 editor: visual
@@ -57,11 +58,9 @@ Pretty recent?
 
 `r fontawesome::fa("check", fill = fa_fill)` Have these packages?
 
-     `tidyverse` (includes `purrr`)
+     `tidyverse` (includes `purrr`); `repurrrsive`
 
-     `repurrrsive`
-
-## Additional resources
+## Additional resources {.smaller}
 
 -   Jenny Bryan purrr tutorial<br> <https://jennybc.github.io/purrr-tutorial/>
 
@@ -73,27 +72,67 @@ Pretty recent?
 
 -   The Joy of Functional Programming (for Data Science)<br> webinar by Hadley Wickham <br> <https://www.youtube.com/watch?v=bzUmK0Y07ck>
 
-# Aside on pipes
+# Syntax aside
 
 ## Pipes
 
+-   2021+ (R $\geq$ 4.1.0) native R pipe `|>`
+
 -   2014+ magrittr pipe `%>%`
 
--   2021+ (R $\geq$ 4.1.0) native R pipe `|>`
+2022 Isabella Velásquez Understanding the native R pipe \|\> <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/>
+
+<brshort>
+
+:::: {.columns}
+
+::: {.column width="50%"}
 
 ```{r echo=TRUE, eval=FALSE}
 whatever(arg1, arg2, arg3, ...)
 
-arg1 %>% 
+arg1 |>  
   whatever(arg2, arg3)
-
-mean(0:10)
-0:10 %>% mean()
 ```
 
-. . .
+<brshort>
 
-<br> 2022 Isabella Velásquez Understanding the native R pipe \|\> <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/>
+```{r echo=TRUE, eval=FALSE}
+whatever(arg1, arg2, arg3, ...)
+
+arg1 %>%
+  whatever(arg2, arg3)
+```
+
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="45%"}
+
+```{r echo=TRUE, eval=FALSE}
+mean(0:10)
+
+0:10 |> 
+  mean()
+```
+
+<brshort>
+
+```{r echo=TRUE, eval=FALSE}
+select(mtcars, mpg, cyl) 
+
+mtcars %>% 
+  select(mpg, cyl) 
+```
+
+
+:::
+
+:::: 
 
 ## R for Data Science: Ch 18 Pipes
 
@@ -102,6 +141,51 @@ mean(0:10)
 ::: footer
 <https://r4ds.had.co.nz/pipes.html#pipes>
 :::
+
+## Namespacing
+
+`dplyr::select()`
+
+ + tells R explicitly to use the function `select` from  the package `dplyr`
+ 
+ + can help to avoid name conflicts (e.g., `MASS::select()`)
+ 
+ + does not require `library(dplyr)`
+
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+```{r echo=TRUE, eval=FALSE}
+library(dplyr)
+
+select(mtcars, mpg, cyl) 
+
+mtcars %>% 
+  select(mpg, cyl) 
+```
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="50%"}
+
+```{r echo=TRUE, eval=FALSE}
+
+
+dplyr::select(mtcars, mpg, cyl) 
+
+mtcars %>% 
+  dplyr::select(mpg, cyl) 
+```
+
+:::
+
+:::: 
 
 # Iterating without purrr
 
@@ -143,8 +227,6 @@ What am I doing?
 Are there mistakes?
 :::
 
-<br>
-
 ```{r, echo = TRUE, eval = FALSE}
 africa <- gapminder[gapminder$continent == "Africa", ]
 africa_mm <- max(africa$lifeExp) - min(africa$lifeExp)
@@ -180,7 +262,7 @@ countdown(
   color_finished_background = "#ffa07a",
   color_finished_text       = "#FFFFFF",
   font_size = "2em",
-  bottom = "-20%"
+  bottom = "-10%"
   )
 ```
 
@@ -247,7 +329,7 @@ cbind(
 
 ## More iteration: making strings
 
-```{r, echo = TRUE}
+```{r, eval = FALSE, echo = TRUE}
 year <- 2017:2021
 location <- c("Orlando", "San Diego", "Austin", "San Francisco", "remote")
 
@@ -258,7 +340,20 @@ for (i in seq_along(conf)) {
 conf
 ```
 
-<br>
+. . .
+
+```{r, eval = TRUE, echo = FALSE}
+year <- 2017:2021
+location <- c("Orlando", "San Diego", "Austin", "San Francisco", "remote")
+
+conf <- rep_len("", length(year))
+for (i in seq_along(conf)) {
+ conf[i] <- paste0("The ", year[i], " RStudio Conference was in ", location[i], ".")
+}
+conf
+```
+
+<brshort>
 
 . . .
 
@@ -339,7 +434,7 @@ library(purrr)                # <-- loads only purrr
 [https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html](https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html)
 :::
 
-## test
+## Data
 
 ```{r, echo=TRUE, eval=FALSE}
 library(purrr)
@@ -347,7 +442,50 @@ library(repurrrsive)
 help(package = "repurrrsive")
 ```
 
-insert logos
+
+:::: {.columns}
+
+::: {.column width="47%"}
+
+`got_chars`
+
+![](img/logo-got.jpg)
+
+:::
+
+::: {.column width="3%"}
+
+:::
+
+::: {.column width="50%"}
+
+
+
+`sw_people`, `sw_species`, etc. 
+
+![](img/logo_star-wars.png)
+
+:::
+
+:::: 
+
+## Lists
+
+![](img/list-vector.png)
+
+::: footer
+<https://adv-r.hadley.nz/vectors-chap.html#vectors-chap>
+:::
+
+
+::: {.notes}
+Atomic vectors are familiar:
+logical, integer, double, character
+
+Vectors come in two flavours: atomic vectors and lists. 
+They differ in terms of their elements’ types: for atomic vectors, 
+all elements must have the same type; for lists, elements can have different types. 
+:::
 
 ## Working with lists
 
