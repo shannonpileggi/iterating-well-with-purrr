@@ -113,8 +113,6 @@ arg1 %>%
 
 :::
 
-. . .
-
 
 ::: {.column width="45%"}
 
@@ -178,7 +176,6 @@ mtcars %>%
 
 :::
 
-. . .
 
 ::: {.column width="50%"}
 
@@ -479,7 +476,7 @@ help(package = "repurrrsive")
 
 ## Get comfortable with lists
 
-![](img/list-vector.png)
+![](img/list-vector.png){.r-stretch}
 
 ::: footer
 <https://adv-r.hadley.nz/vectors-chap.html#vectors-chap>
@@ -583,16 +580,12 @@ and apparently it is implemented in such a way that [ is ok
 ![](img/pepper-1.jpg) 
 :::
 
-. . .
-
 ::: {.column width="33%"}
 
 `x[i]`
 
 ![](img/pepper-2.jpg) 
 :::
-
-. . .
 
 
 ::: {.column width="33%"}
@@ -614,3 +607,31 @@ x[[1]] is the pepper packet.
 :::
 
 # Iterating with purrr
+
+## 
+
+<br>
+<br>
+
+::: {.r-fit-text}
+`purrr::map(.x, .f, ...)`
+:::
+
+<br>
+
+. . .
+
+::: {.r-fit-text}
+for every element of `.x` do `.f`
+:::
+
+## {background-image="img/lego-rstats_101-6938.jpg"}
+
+<br>
+
+::: {.black-code .center-x}
+.x = minis
+:::
+
+::: footer
+:::
