@@ -552,7 +552,7 @@
 </div>
 </div>
 <div class="footer">
-<p>Hans Rosling discusses Gapminder data<br> <a href="https://www.youtube.com/watch?v=hVimVzgtD6w">https://www.youtube.com/watch?v=hVimVzgtD6w</a></p>
+<p>Hans Rosling discusses Gapminder data<br> <a href="https://www.youtube.com/watch?v=hVimVzgtD6w" class="uri">https://www.youtube.com/watch?v=hVimVzgtD6w</a></p>
 </div>
 </section>
 <section id="gapminder-life-expectancy" class="slide level2">
@@ -587,7 +587,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628b83d0" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
+<div class="countdown" id="timer_628e833d" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -603,7 +603,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628b8157" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628e82bb" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -678,7 +678,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628b83fb" style="right:-10%;bottom:-10%;" data-warnwhen="0">
+<div class="countdown" id="timer_628e81a3" style="right:-10%;bottom:-10%;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 </div>
@@ -753,7 +753,7 @@ The 2021 RStudio Conference was in remote.</code></pre>
 </ul>
 
 <img data-src="img/tutorial-purrr-base.png" class="r-stretch"><div class="footer">
-<p><a href="https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html">https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html</a></p>
+<p><a href="https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html" class="uri">https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html</a></p>
 </div>
 </section>
 <section id="data" class="slide level2">
@@ -909,6 +909,402 @@ The 2021 RStudio Conference was in remote.</code></pre>
 </div>
 <div class="footer">
 
+</div>
+</section>
+<section id="section-3" class="slide level2" data-background-image="img/lego-rstats_102-6929.jpg">
+<h2></h2>
+<p><br></p>
+<div class="black-code center-x">
+<p>map(minis, antennate)</p>
+</div>
+<div class="footer">
+
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>for every element of <code>.x</code> do <code>.f</code></p>
+</div>
+
+<img data-src="img/map.png" class="r-stretch"><div class="footer">
+<p>Advanced R: Ch. 9 Functionals</p>
+<p><a href="https://adv-r.hadley.nz/functionals.html" class="uri">https://adv-r.hadley.nz/functionals.html</a></p>
+</div>
+</section>
+<section id="purrrmap.x-.f-..." class="slide level2">
+<h2><code>purrr::map(.x, .f, ...)</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>.x <span class="ot">&lt;-</span> SOME VECTOR OR LIST</span>
+<span id="cb24-2"><a href="#cb24-2"></a>out <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">length</span>(.x))</span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(out)) {</span>
+<span id="cb24-4"><a href="#cb24-4"></a> out[[i]] <span class="ot">&lt;-</span> <span class="fu">.f</span>(.x[[i]])</span>
+<span id="cb24-5"><a href="#cb24-5"></a>}</span>
+<span id="cb24-6"><a href="#cb24-6"></a>out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br> <code>purrr::map()</code> is a nice way to write a for loop.</p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p><em>Someone has to write a for loop. It doesn’t have to be you.</em></p>
+<p>&nbsp;&nbsp; <em>~ Jenny Bryan</em></p>
+</div>
+</section>
+<section id="workflow-demonstration" class="slide level2">
+<h2>Workflow demonstration</h2>
+<p>How many aliases does each GoT character have?</p>
+<div class="fragment">
+<p><code>map(got_chars, .f = 🤷)</code></p>
+<p><br></p>
+</div>
+<div class="fragment">
+<p>Workflow:</p>
+<ol type="1">
+<li>Do it for one element.</li>
+<li>Find the general recipe.</li>
+<li>Drop into <code>map()</code> to do for all.</li>
+</ol>
+</div>
+</section>
+<section id="do-it-for-one-element" class="slide level2">
+<h2>1. Do it for one element</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>got_chars[[<span class="dv">9</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$url
+[1] "https://www.anapioficeandfire.com/api/characters/1303"
+
+$id
+[1] 1303
+
+$name
+[1] "Daenerys Targaryen"
+
+$gender
+[1] "Female"
+
+$culture
+[1] "Valyrian"
+
+$born
+[1] "In 284 AC, at Dragonstone"
+
+$died
+[1] ""
+
+$alive
+[1] TRUE
+
+$titles
+[1] "Queen of the Andals and the Rhoynar and the First Men, Lord of the Seven Kingdoms"
+[2] "Khaleesi of the Great Grass Sea"                                                  
+[3] "Breaker of Shackles/Chains"                                                       
+[4] "Queen of Meereen"                                                                 
+[5] "Princess of Dragonstone"                                                          
+
+$aliases
+ [1] "Dany"                    "Daenerys Stormborn"     
+ [3] "The Unburnt"             "Mother of Dragons"      
+ [5] "Mother"                  "Mhysa"                  
+ [7] "The Silver Queen"        "Silver Lady"            
+ [9] "Dragonmother"            "The Dragon Queen"       
+[11] "The Mad King's daughter"
+
+$father
+[1] ""
+
+$mother
+[1] ""
+
+$spouse
+[1] "https://www.anapioficeandfire.com/api/characters/1346"
+
+$allegiances
+[1] "House Targaryen of King's Landing"
+
+$books
+[1] "A Feast for Crows"
+
+$povBooks
+[1] "A Game of Thrones"    "A Clash of Kings"     "A Storm of Swords"   
+[4] "A Dance with Dragons"
+
+$tvSeries
+[1] "Season 1" "Season 2" "Season 3" "Season 4" "Season 5" "Season 6"
+
+$playedBy
+[1] "Emilia Clarke"</code></pre>
+</div>
+</div>
+</section>
+<section id="do-it-for-one-element-1" class="slide level2">
+<h2>1. Do it for one element</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Dany"                    "Daenerys Stormborn"     
+ [3] "The Unburnt"             "Mother of Dragons"      
+ [5] "Mother"                  "Mhysa"                  
+ [7] "The Silver Queen"        "Silver Lady"            
+ [9] "Dragonmother"            "The Dragon Queen"       
+[11] "The Mad King's daughter"</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">length</span>(got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="do-it-for-one-element-again" class="slide level2">
+<h2>1. Do it for one element, again</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Daenerys</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>got_chars[[<span class="dv">9</span>]]</span>
+<span id="cb31-3"><a href="#cb31-3"></a>got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]]</span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="fu">length</span>(got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Asha</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>got_chars[[<span class="dv">13</span>]]</span>
+<span id="cb32-3"><a href="#cb32-3"></a>got_chars[[<span class="dv">13</span>]][[<span class="st">"aliases"</span>]]</span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="fu">length</span>(got_chars[[<span class="dv">13</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="find-the-general-recipe." class="slide level2">
+<h2>2. Find the general recipe.</h2>
+<p><code>.x &lt;- got_chars[[?]]</code></p>
+<p><code>length(.x[["aliases"]])</code></p>
+<div class="fragment">
+<p><br></p>
+<ul>
+<li><code>.x</code> is a pronoun, like “it”</li>
+<li><code>.x</code> means “the current element”</li>
+</ul>
+</div>
+</section>
+<section id="drop-into-map-to-do-for-all." class="slide level2">
+<h2>3. Drop into map() to do for all.</h2>
+<p><code>.x &lt;- got_chars[[?]]</code></p>
+<p><code>length(.x[["aliases"]])</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 4
+
+[[2]]
+[1] 11
+
+[[3]]
+[1] 1
+
+[[4]]
+[1] 1
+
+[[5]]
+[1] 1
+
+[[6]]
+[1] 1
+
+[[7]]
+[1] 1
+
+[[8]]
+[1] 1
+
+[[9]]
+[1] 11
+
+[[10]]
+[1] 5
+
+[[11]]
+[1] 16
+
+[[12]]
+[1] 1
+
+[[13]]
+[1] 2
+
+[[14]]
+[1] 5
+
+[[15]]
+[1] 3
+
+[[16]]
+[1] 3
+
+[[17]]
+[1] 3
+
+[[18]]
+[1] 5
+
+[[19]]
+[1] 0
+
+[[20]]
+[1] 3
+
+[[21]]
+[1] 4
+
+[[22]]
+[1] 1
+
+[[23]]
+[1] 8
+
+[[24]]
+[1] 2
+
+[[25]]
+[1] 1
+
+[[26]]
+[1] 5
+
+[[27]]
+[1] 1
+
+[[28]]
+[1] 4
+
+[[29]]
+[1] 7
+
+[[30]]
+[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="anonymous-functions" class="slide level2">
+<h2>Anonymous functions</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<p><code>~</code> is shortcut for anonymous functions supported in <code>purrr</code></p>
+<p><br></p>
+<div class="fragment">
+<p>Three ways of specifying anonymous functions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">map</span>(got_chars,           <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]])) <span class="co"># supported in purrr</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">map</span>(got_chars, <span class="cf">function</span>(x) <span class="fu">length</span>(x[[<span class="st">"aliases"</span>]]))  <span class="co"># supported in base R</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="fu">map</span>(got_chars,        \(x) <span class="fu">length</span>(x[[<span class="st">"aliases"</span>]]))  <span class="co"># supported R &gt; 4.1.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p><a href="https://adv-r.hadley.nz/functionals.html#purrr-shortcuts" class="uri">https://adv-r.hadley.nz/functionals.html#purrr-shortcuts</a></p>
+</div>
+</div>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Characters</th>
+<th>Items</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>got_chars</td>
+<td>titles, allegiances</td>
+</tr>
+<tr class="even">
+<td>sw_people</td>
+<td>vehicles, starships</td>
+</tr>
+</tbody>
+</table>
+<p><brshort></brshort></p>
+<div class="question">
+<p>How many ___ does each character have?</p>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="center-x">
+<p><code>map(got_chars, ~ length(.x[["aliases"]]))</code></p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628e8292" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="discussion-1" class="slide level2">
+<h2>Discussion</h2>
+<div class="question">
+<p>What are some challenges with this output? How could it be improved?</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628e8284" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="challenges" class="slide level2">
+<h2>Challenges</h2>
+<div class="center-x">
+<p><code>map(got_chars, ~ length(.x[["aliases"]]))</code></p>
+</div>
+<ol type="1">
+<li><p>A list is returned.</p></li>
+<li><p>We cannot see who the aliases belong to.</p></li>
+</ol>
+</section>
+<section id="solution-1-map-variants" class="slide level2">
+<h2>Solution 1: map variants</h2>
+</section>
+<section id="solution-2-named-lists" class="slide level2">
+<h2>Solution 2: named lists</h2>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your turn</h2>
+<div class="question">
+<p>Replace <code>map()</code> with type-specific <code>map()</code>.</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># What's each character's name?</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
+<span id="cb37-4"><a href="#cb37-4"></a></span>
+<span id="cb37-5"><a href="#cb37-5"></a><span class="co"># What color is each SW character's hair?</span></span>
+<span id="cb37-6"><a href="#cb37-6"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"hair_color"</span>]])</span>
+<span id="cb37-7"><a href="#cb37-7"></a></span>
+<span id="cb37-8"><a href="#cb37-8"></a><span class="co"># Is the GoT character alive?</span></span>
+<span id="cb37-9"><a href="#cb37-9"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"alive"</span>]])</span>
+<span id="cb37-10"><a href="#cb37-10"></a></span>
+<span id="cb37-11"><a href="#cb37-11"></a><span class="co"># Is the SW character female?</span></span>
+<span id="cb37-12"><a href="#cb37-12"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"gender"</span>]] <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb37-13"><a href="#cb37-13"></a></span>
+<span id="cb37-14"><a href="#cb37-14"></a><span class="co"># How heavy is each SW character?</span></span>
+<span id="cb37-15"><a href="#cb37-15"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"mass"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628e827f" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
 </div>
 
 <img src="img/purrr-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">

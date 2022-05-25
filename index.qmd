@@ -17,6 +17,8 @@ execute:
 ```{r}
 library(tidyverse)
 library(countdown)
+library(purrr)
+library(repurrrsive)
 ```
 
 ```{r font-awesome-color}
@@ -86,10 +88,8 @@ Pretty recent?
 
 <brshort>
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 ```{r echo=TRUE, eval=FALSE}
 whatever(arg1, arg2, arg3, ...)
 
@@ -105,17 +105,12 @@ whatever(arg1, arg2, arg3, ...)
 arg1 %>%
   whatever(arg2, arg3)
 ```
-
-
 :::
 
 ::: {.column width="5%"}
-
 :::
 
-
 ::: {.column width="45%"}
-
 ```{r echo=TRUE, eval=FALSE}
 mean(0:10)
 
@@ -131,11 +126,8 @@ select(mtcars, mpg, cyl)
 mtcars %>% 
   select(mpg, cyl) 
 ```
-
-
 :::
-
-:::: 
+:::
 
 ## R for Data Science: Ch 18 Pipes
 
@@ -149,18 +141,16 @@ mtcars %>%
 
 `dplyr::select()`
 
- + tells R explicitly to use the function `select` from  the package `dplyr`
- 
- + can help to avoid name conflicts (e.g., `MASS::select()`)
- 
- + does not require `library(dplyr)`
+-   tells R explicitly to use the function `select` from the package `dplyr`
+
+-   can help to avoid name conflicts (e.g., `MASS::select()`)
+
+-   does not require `library(dplyr)`
 
 . . .
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="45%"}
-
 ```{r echo=TRUE, eval=FALSE}
 library(dplyr)
 
@@ -169,16 +159,12 @@ select(mtcars, mpg, cyl)
 mtcars %>% 
   select(mpg, cyl) 
 ```
-
 :::
 
 ::: {.column width="5%"}
-
 :::
 
-
 ::: {.column width="50%"}
-
 ```{r echo=TRUE, eval=FALSE}
 
 
@@ -187,10 +173,8 @@ dplyr::select(mtcars, mpg, cyl)
 mtcars %>% 
   dplyr::select(mpg, cyl) 
 ```
-
 :::
-
-:::: 
+:::
 
 # Iterating without purrr
 
@@ -203,8 +187,7 @@ gapminder
 ```
 
 ::: footer
-Hans Rosling discusses Gapminder data<br> 
-[https://www.youtube.com/watch?v=hVimVzgtD6w](https://www.youtube.com/watch?v=hVimVzgtD6w)
+Hans Rosling discusses Gapminder data<br> <https://www.youtube.com/watch?v=hVimVzgtD6w>
 :::
 
 ## Gapminder life expectancy
@@ -223,7 +206,6 @@ gapminder %>%
     axis.title = element_text(size = 15)
   )
 ```
-
 
 ## 
 
@@ -407,9 +389,9 @@ knitr::include_graphics("img/purrr-logo.png")
 
 <https://purrr.tidyverse.org/>
 
-- `purrr` enhances R's functional programming toolkit
+-   `purrr` enhances R's functional programming toolkit
 
-- a "core" package in the tidyverse meta-package
+-   a "core" package in the tidyverse meta-package
 
 <br>
 
@@ -427,16 +409,14 @@ library(purrr)                # <-- loads only purrr
 
 ## `purrr` vs `apply`
 
-- purrr is an alternative to "apply" functions
+-   purrr is an alternative to "apply" functions
 
-- `purrr::map()` ≈ `base::lapply()`
+-   `purrr::map()` ≈ `base::lapply()`
 
 ![](img/tutorial-purrr-base.png)
 
-
-
 ::: footer
-[https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html](https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html)
+<https://jennybc.github.io/purrr-tutorial/bk01_base-functions.html>
 :::
 
 ## Data
@@ -447,32 +427,22 @@ library(repurrrsive)
 help(package = "repurrrsive")
 ```
 
-
-:::: {.columns}
-
+::: columns
 ::: {.column width="47%"}
-
 `got_chars`
 
 ![](img/logo-got.jpg)
-
 :::
 
 ::: {.column width="3%"}
-
 :::
 
 ::: {.column width="50%"}
-
-
-
-`sw_people`, `sw_species`, etc. 
+`sw_people`, `sw_species`, etc.
 
 ![](img/logo_star-wars.png)
-
 :::
-
-:::: 
+:::
 
 ## Get comfortable with lists
 
@@ -482,14 +452,11 @@ help(package = "repurrrsive")
 <https://adv-r.hadley.nz/vectors-chap.html#vectors-chap>
 :::
 
+::: notes
+Atomic vectors are familiar: logical, integer, double, character
 
-::: {.notes}
-Atomic vectors are familiar:
-logical, integer, double, character
-
-Vectors come in two flavours: atomic vectors and lists. 
-They differ in terms of their elements’ types: for atomic vectors, 
-all elements must have the same type; for lists, elements can have different types. 
+Vectors come in two flavours: atomic vectors and lists.
+They differ in terms of their elements' types: for atomic vectors, all elements must have the same type; for lists, elements can have different types.
 :::
 
 ## Working with lists
@@ -502,14 +469,14 @@ all elements must have the same type; for lists, elements can have different typ
 
 ## Live coding
 
-1. How many elements are in `got_chars`?
+1.  How many elements are in `got_chars`?
 
-2. Who is the 9th person listed in `got_chars`? What information is given for this person?
+2.  Who is the 9th person listed in `got_chars`?
+    What information is given for this person?
 
-3. What is the difference between `got_chars[9]` and `got_chars[[9]]`? 
+3.  What is the difference between `got_chars[9]` and `got_chars[[9]]`?
 
 ## List exploration
-
 
 ```{r, echo = TRUE, eval = FALSE}
 str(x, list.len = ?, max.level = ?)
@@ -527,26 +494,24 @@ View(x) # in RStudio
 
 ![](img/train-1.png)
 
-. . . 
+. . .
 
 ![](img/train-2.png)
 
 . . .
 
-`[`  returns a smaller list; `[[` returns contents in the list
+`[` returns a smaller list; `[[` returns contents in the list
 
 ::: footer
 <https://adv-r.hadley.nz/subsetting.html#subset-single>
 :::
 
-::: {.notes}
+::: notes
 The train carrying objects is a list named x.
-x[1] is a train with the first car
-x[[1]] is the contents of car 1
+x\[1\] is a train with the first car x\[\[1\]\] is the contents of car 1
 :::
 
 ## Subsetting lists, cont. {visibility="hidden"}
-
 
 ![](img/train-3.png)
 
@@ -554,66 +519,56 @@ x[[1]] is the contents of car 1
 <https://adv-r.hadley.nz/subsetting.html#subset-single>
 :::
 
-::: {.notes}
-got_chars[[0]]
-#> Error in got_chars[[0]]: attempt to select less than one element in get1index <real>
+::: notes
+got_chars\[\[0\]\] #\> Error in got_chars\[\[0\]\]: attempt to select less than one element in get1index <real>
 
-[[ is asking for one specific element either by position or by name
-and apparently it is implemented in such a way that errors for [[0]]
+\[\[ is asking for one specific element either by position or by name and apparently it is implemented in such a way that errors for \[\[0\]\]
 
-got_chars[0]
-#> list()
+got_chars\[0\] #\> list()
 
-whereas [ is asking for a sub-list
-and apparently it is implemented in such a way that [ is ok
+whereas \[ is asking for a sub-list and apparently it is implemented in such a way that \[ is ok
 :::
-
 
 ## Another list analogy
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="33%"}
-
 `x`
 
-![](img/pepper-1.jpg) 
+![](img/pepper-1.jpg)
 :::
 
 ::: {.column width="33%"}
-
 `x[i]`
 
-![](img/pepper-2.jpg) 
+![](img/pepper-2.jpg)
 :::
-
 
 ::: {.column width="33%"}
 `x[[i]]`
 
-![](img/pepper-3.jpg) 
+![](img/pepper-3.jpg)
 :::
-
-::::
+:::
 
 ::: footer
 <https://r4ds.had.co.nz/vectors.html?q=list#lists-of-condiments>
 :::
 
-::: {.notes}
-If this pepper shaker is your list x, then, x[1] is a pepper shaker containing a single pepper packet.
-x[2] would look the same, but would contain the second packet. x[1:2] would be a pepper shaker containing two pepper packets.
-x[[1]] is the pepper packet.
+::: notes
+If this pepper shaker is your list x, then, x\[1\] is a pepper shaker containing a single pepper packet.
+x\[2\] would look the same, but would contain the second packet.
+x\[1:2\] would be a pepper shaker containing two pepper packets.
+x\[\[1\]\] is the pepper packet.
 :::
 
 # Iterating with purrr
 
 ## 
 
-<br>
-<br>
+<br> <br>
 
-::: {.r-fit-text}
+::: r-fit-text
 `purrr::map(.x, .f, ...)`
 :::
 
@@ -621,11 +576,11 @@ x[[1]] is the pepper packet.
 
 . . .
 
-::: {.r-fit-text}
+::: r-fit-text
 for every element of `.x` do `.f`
 :::
 
-## {background-image="img/lego-rstats_101-6938.jpg"}
+##  {background-image="img/lego-rstats_101-6938.jpg"}
 
 <br>
 
@@ -635,3 +590,251 @@ for every element of `.x` do `.f`
 
 ::: footer
 :::
+
+##  {background-image="img/lego-rstats_102-6929.jpg"}
+
+<br>
+
+::: {.black-code .center-x}
+map(minis, antennate)
+:::
+
+::: footer
+:::
+
+## 
+
+::: r-fit-text
+for every element of `.x` do `.f`
+:::
+
+::: center-x
+![](img/map.png)
+:::
+
+::: footer
+Advanced R: Ch.
+9 Functionals
+
+<https://adv-r.hadley.nz/functionals.html>
+:::
+
+## `purrr::map(.x, .f, ...)`
+
+```{r, echo=TRUE, eval=FALSE}
+.x <- SOME VECTOR OR LIST
+out <- vector(mode = "list", length = length(.x))
+for (i in seq_along(out)) {
+ out[[i]] <- .f(.x[[i]])
+}
+out
+```
+
+. . .
+
+<br> `purrr::map()` is a nice way to write a for loop.
+
+. . .
+
+<br>
+
+*Someone has to write a for loop. It doesn't have to be you.*
+
+   *\~ Jenny Bryan*
+
+## Workflow demonstration
+
+How many aliases does each GoT character have?
+
+. . .
+
+`map(got_chars, .f = 🤷)`
+
+<br>
+
+. . .
+
+Workflow:
+
+1.  Do it for one element.
+2.  Find the general recipe.
+3.  Drop into `map()` to do for all.
+
+## 1. Do it for one element
+
+
+
+```{r, echo=TRUE, eval=TRUE}
+got_chars[[9]]
+```
+
+## 1. Do it for one element
+
+```{r, echo=TRUE, eval=TRUE}
+got_chars[[9]][["aliases"]]
+```
+
+. . .
+
+<br> 
+
+```{r, echo=TRUE, eval=TRUE}
+length(got_chars[[9]][["aliases"]])
+```
+
+
+## 1. Do it for one element, again
+
+```{r, echo=TRUE, eval=FALSE}
+# Daenerys
+got_chars[[9]]
+got_chars[[9]][["aliases"]]
+length(got_chars[[9]][["aliases"]])
+```
+
+. . .
+
+<br>
+
+
+```{r, echo=TRUE, eval=FALSE}
+# Asha
+got_chars[[13]]
+got_chars[[13]][["aliases"]]
+length(got_chars[[13]][["aliases"]])
+```
+
+
+## 2. Find the general recipe.
+
+
+
+`.x <- got_chars[[?]]`
+
+`length(.x[["aliases"]])`
+
+. . .
+
+<br>
+
+* `.x` is a pronoun, like "it"
+* `.x` means "the current element"
+
+## 3. Drop into map() to do for all.
+
+`.x <- got_chars[[?]]`
+
+`length(.x[["aliases"]])`
+
+```{r, echo=TRUE, eval=TRUE}
+map(got_chars, ~ length(.x[["aliases"]]))
+```
+
+## Anonymous functions
+
+```{r, echo=TRUE, eval=FALSE}
+map(got_chars, ~ length(.x[["aliases"]]))
+```
+
+<br>
+
+`~` is shortcut for anonymous functions supported in `purrr`
+
+<br>
+
+. . .
+
+Three ways of specifying anonymous functions:
+
+```{r, echo=TRUE, eval=FALSE}
+map(got_chars,           ~ length(.x[["aliases"]])) # supported in purrr
+map(got_chars, function(x) length(x[["aliases"]]))  # supported in base R
+map(got_chars,        \(x) length(x[["aliases"]]))  # supported R > 4.1.0
+```
+
+
+::: footer
+<https://adv-r.hadley.nz/functionals.html#purrr-shortcuts>
+:::
+
+
+## Your turn
+
+| Characters | Items               |
+|------------|---------------------|
+| got_chars  | titles, allegiances |
+| sw_people  | vehicles, starships |
+
+<brshort>
+
+::: question
+How many ___ does each character have?
+:::
+
+. . .
+
+<br>
+
+::: {.center-x}
+`map(got_chars, ~ length(.x[["aliases"]]))`
+:::
+
+```{r}
+countdown(minutes = 5)
+```
+
+
+## Discussion
+
+::: question
+What are some challenges with this output? How could it be improved?
+:::
+
+```{r}
+countdown(minutes = 1)
+```
+
+::: notes
+1. A list is returned.
+
+2. We cannot see who is associated with each number of aliases.
+:::
+
+
+## Solution 1: map variants
+
+```{r}
+map_int(got_chars, ~ length(.x[["aliases"]]))
+```
+
+
+## Solution 2: named lists
+
+## Your turn
+
+::: question
+Replace map() with type-specific map().
+:::
+
+```{r echo=TRUE, eval=FALSE}
+# What's each character's name?
+map(got_chars, ~.x[["name"]])
+map(sw_people, ~.x[["name"]])
+
+# What color is each SW character's hair?
+map(sw_people, ~ .x[["hair_color"]])
+
+# Is the GoT character alive?
+map(got_chars, ~ .x[["alive"]])
+
+# Is the SW character female?
+map(sw_people, ~ .x[["gender"]] == "female")
+
+# How heavy is each SW character?
+map(sw_people, ~ .x[["mass"]])
+```
+
+
+```{r}
+countdown(minutes = 2)
+```
