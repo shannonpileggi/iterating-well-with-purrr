@@ -587,7 +587,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628e833d" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
+<div class="countdown" id="timer_628eefa1" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -603,7 +603,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628e82bb" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628ef0d2" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -678,7 +678,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628e81a3" style="right:-10%;bottom:-10%;" data-warnwhen="0">
+<div class="countdown" id="timer_628eef87" style="right:-10%;bottom:-10%;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 </div>
@@ -1202,8 +1202,8 @@ $playedBy
 <p>Three ways of specifying anonymous functions:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">map</span>(got_chars,           <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]])) <span class="co"># supported in purrr</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">map</span>(got_chars, <span class="cf">function</span>(x) <span class="fu">length</span>(x[[<span class="st">"aliases"</span>]]))  <span class="co"># supported in base R</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a><span class="fu">map</span>(got_chars,        \(x) <span class="fu">length</span>(x[[<span class="st">"aliases"</span>]]))  <span class="co"># supported R &gt; 4.1.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">map</span>(got_chars, <span class="cf">function</span>(x) <span class="fu">length</span>( x[[<span class="st">"aliases"</span>]])) <span class="co"># supported in base R</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="fu">map</span>(got_chars,        \(x) <span class="fu">length</span>( x[[<span class="st">"aliases"</span>]])) <span class="co"># supported R &gt; 4.1.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="footer">
 <p><a href="https://adv-r.hadley.nz/functionals.html#purrr-shortcuts" class="uri">https://adv-r.hadley.nz/functionals.html#purrr-shortcuts</a></p>
@@ -1212,6 +1212,10 @@ $playedBy
 </section>
 <section id="your-turn" class="slide level2">
 <h2>Your turn</h2>
+<div class="question">
+<p>How many ___ does each character have?</p>
+</div>
+<p><brshort></brshort></p>
 <table>
 <thead>
 <tr class="header">
@@ -1230,10 +1234,6 @@ $playedBy
 </tr>
 </tbody>
 </table>
-<p><brshort></brshort></p>
-<div class="question">
-<p>How many ___ does each character have?</p>
-</div>
 <div class="fragment">
 <p><br></p>
 <div class="center-x">
@@ -1241,71 +1241,230 @@ $playedBy
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628e8292" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628ef215" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="discussion-1" class="slide level2">
-<h2>Discussion</h2>
-<div class="question">
-<p>What are some challenges with this output? How could it be improved?</p>
-</div>
+
+<section id="type-specific-map-variants" class="slide level2">
+<h2>Type specific map variants</h2>
 <div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_628e8284" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  4 11  1  1  1  1  1  1 11  5 16  1  2  5  3  3  3  5  0  3  4  1  8  2  1
+[26]  5  1  4  7  3</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><code>map_lgl()</code></p>
+<p><code>map_int()</code></p>
+<p><code>map_dbl()</code></p>
+<p><code>map_chr()</code></p>
+</div><div class="column" style="width:70%;">
+<p><br></p>
+<p>returns an atomic <em>vector</em></p>
+<p>of the specified type</p>
 </div>
 </div>
 </div>
-</section>
-<section id="challenges" class="slide level2">
-<h2>Challenges</h2>
-<div class="center-x">
-<p><code>map(got_chars, ~ length(.x[["aliases"]]))</code></p>
-</div>
-<ol type="1">
-<li><p>A list is returned.</p></li>
-<li><p>We cannot see who the aliases belong to.</p></li>
-</ol>
-</section>
-<section id="solution-1-map-variants" class="slide level2">
-<h2>Solution 1: map variants</h2>
-</section>
-<section id="solution-2-named-lists" class="slide level2">
-<h2>Solution 2: named lists</h2>
 </section>
 <section id="your-turn-1" class="slide level2">
 <h2>Your turn</h2>
 <div class="question">
-<p>Replace <code>map()</code> with type-specific <code>map()</code>.</p>
+<p>Replace map() with type-specific map().</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># What's each character's name?</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
-<span id="cb37-3"><a href="#cb37-3"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
-<span id="cb37-4"><a href="#cb37-4"></a></span>
-<span id="cb37-5"><a href="#cb37-5"></a><span class="co"># What color is each SW character's hair?</span></span>
-<span id="cb37-6"><a href="#cb37-6"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"hair_color"</span>]])</span>
-<span id="cb37-7"><a href="#cb37-7"></a></span>
-<span id="cb37-8"><a href="#cb37-8"></a><span class="co"># Is the GoT character alive?</span></span>
-<span id="cb37-9"><a href="#cb37-9"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"alive"</span>]])</span>
-<span id="cb37-10"><a href="#cb37-10"></a></span>
-<span id="cb37-11"><a href="#cb37-11"></a><span class="co"># Is the SW character female?</span></span>
-<span id="cb37-12"><a href="#cb37-12"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"gender"</span>]] <span class="sc">==</span> <span class="st">"female"</span>)</span>
-<span id="cb37-13"><a href="#cb37-13"></a></span>
-<span id="cb37-14"><a href="#cb37-14"></a><span class="co"># How heavy is each SW character?</span></span>
-<span id="cb37-15"><a href="#cb37-15"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"mass"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># What's each character's name?</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
+<span id="cb39-4"><a href="#cb39-4"></a></span>
+<span id="cb39-5"><a href="#cb39-5"></a><span class="co"># What color is each SW character's hair?</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"hair_color"</span>]])</span>
+<span id="cb39-7"><a href="#cb39-7"></a></span>
+<span id="cb39-8"><a href="#cb39-8"></a><span class="co"># Is the GoT character alive?</span></span>
+<span id="cb39-9"><a href="#cb39-9"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"alive"</span>]])</span>
+<span id="cb39-10"><a href="#cb39-10"></a></span>
+<span id="cb39-11"><a href="#cb39-11"></a><span class="co"># Is the SW character female?</span></span>
+<span id="cb39-12"><a href="#cb39-12"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"gender"</span>]] <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb39-13"><a href="#cb39-13"></a></span>
+<span id="cb39-14"><a href="#cb39-14"></a><span class="co"># How heavy is each SW character?</span></span>
+<span id="cb39-15"><a href="#cb39-15"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"mass"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628e827f" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="countdown" id="timer_628ef02b" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="more-purrr" class="title-slide slide level1 center">
+<h1>More purrr</h1>
+
+</section>
+<section id="review" class="slide level2">
+<h2>Review</h2>
+<ul>
+<li><p>Lists can be awkward</p></li>
+<li><p>Lists can be necessary</p></li>
+<li><p>Get to know your list</p></li>
+</ul>
+</section>
+<section id="review-cont." class="slide level2">
+<h2>Review, cont.</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(.x, .f, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>for every element of <code>.x</code> do <code>.f</code></p>
+<p><br></p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>quick anonymous functions via formula</p>
+<p><br></p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">map_lgl</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"gender"</span>]] <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span>
+<span id="cb42-3"><a href="#cb42-3"></a><span class="fu">map_chr</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"name"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>type specific map variants</p>
+</div>
+</section>
+<section id="we-extract-by-name-a-lot" class="slide level2">
+<h2>We extract by name a lot</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># What's each character's name?</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
+<span id="cb43-3"><a href="#cb43-3"></a></span>
+<span id="cb43-4"><a href="#cb43-4"></a><span class="co"># What color is each SW character's hair?</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"hair_color"</span>]])</span>
+<span id="cb43-6"><a href="#cb43-6"></a></span>
+<span id="cb43-7"><a href="#cb43-7"></a><span class="co"># Is the GoT character alive?</span></span>
+<span id="cb43-8"><a href="#cb43-8"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"alive"</span>]])</span>
+<span id="cb43-9"><a href="#cb43-9"></a></span>
+<span id="cb43-10"><a href="#cb43-10"></a><span class="co"># How heavy is each SW character?</span></span>
+<span id="cb43-11"><a href="#cb43-11"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"mass"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="f-specification-shortcuts" class="slide level2">
+<h2><code>.f</code> specification &amp; shortcuts</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><br></p>
+<p><brshort></brshort></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>get_name <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ x[[<span class="st">"name"</span>]] }</span>
+<span id="cb44-2"><a href="#cb44-2"></a><span class="fu">map_chr</span>(got_chars, get_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">map_chr</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"name"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">map_chr</span>(got_chars, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<p><code>.f</code> accepts</p>
+<p><brshort></brshort></p>
+<p>named functions</p>
+<p><br></p>
+<p>anonymous functions</p>
+<p><br></p>
+<p>a name</p>
+<p><br></p>
+<p>a position</p>
+</div>
+</div>
+</section>
+
+<section id="section-5" class="slide level2" data-background-image="img/lego-rstats_103-8826.jpg">
+<h2></h2>
+<p><br></p>
+<div class="black-code center-x">
+<p>.x = minis</p>
+</div>
+<div class="footer">
+
+</div>
+</section>
+<section id="section-6" class="slide level2" data-background-image="img/lego-rstats_106-8820.jpg">
+<h2></h2>
+<p><br></p>
+<div class="black-code center-x">
+<p>map(minis, “pants”)</p>
+</div>
+<div class="footer">
+
+</div>
+</section>
+<section id="your-turn-2" class="slide level2">
+<h2>Your turn</h2>
+<div class="question">
+<ol type="1">
+<li><p>Explore a GoT or SW list and find a new element to look at.</p></li>
+<li><p>Extract it across the whole list with name and position shortcuts for .f.</p></li>
+<li><p>Use map_TYPE() to get an an atomic vector as output.</p></li>
+</ol>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># GoT</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>map_??(got_chars, ??)</span>
+<span id="cb52-3"><a href="#cb52-3"></a></span>
+<span id="cb52-4"><a href="#cb52-4"></a><span class="co"># Star Wars</span></span>
+<span id="cb52-5"><a href="#cb52-5"></a>map_??(sw_people, ??)</span>
+<span id="cb52-6"><a href="#cb52-6"></a>map_??(sw_vehicles, ??)</span>
+<span id="cb52-7"><a href="#cb52-7"></a>map_??(sw_species, ??)</span>
+<span id="cb52-8"><a href="#cb52-8"></a><span class="co"># etc.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_628ef0a4" style="right:0;bottom:0;" data-warnwhen="0">
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="common-problem" class="slide level2">
+<h2>Common problem</h2>
+<p><br></p>
+<div class="r-fit-text">
+<p>I’m using map_TYPE() but some</p>
+<p>individual elements aren’t of length 1.</p>
+</div>
+<div class="r-fit-text">
+<p>They are absent or have length &gt; 1.</p>
+</div>
+</section>
+<section id="solutions" class="slide level2">
+<h2>Solutions</h2>
+<p><br></p>
+<h4 id="missing-elements">Missing elements?</h4>
+<p>Specify a <code>.default</code> value.</p>
+<p><br></p>
+<h4 id="elements-of-length-1">Elements of length &gt; 1?</h4>
+<p>You can’t make an atomic vector.<code>*</code></p>
+<p>Get happy with a list or list-column.</p>
+<p>Or pick one element, e.g., the first.</p>
+<p><br></p>
+<p><code>*</code> You can, if you are willing to <code>flatten()</code> or <code>squash()</code>.</p>
 
 <img src="img/purrr-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://github.com/shannonpileggi/iterating-well-with-purrr">Iterating well with purrr</a></p>
