@@ -1133,33 +1133,60 @@ Or pick one element, e.g., the first.
 
 ## `.default` value
 
+```{r, eval=TRUE, echo=TRUE}
+map(sw_vehicles, "pilots", .default = NA)
+```
+
+## select first element
 
 ```{r, eval=TRUE, echo=TRUE}
-map(
-  sw_vehicles, 
-  "pilots"
-  )
+map_chr(sw_vehicles, list("pilots", 1), .default = NA)
 ```
 
-```{r, eval=TRUE, echo=TRUE, error=TRUE}
-map_chr(
-  sw_vehicles, 
-  "pilots"
-  )
+
+## more `.f` shortcuts
+
+<br>
+
+::: columns
+
+::: {.column width="55%"}
+
+<br>
+
+<br>
+
+
+```{r, eval=FALSE, echo=TRUE}
+map(got_chars, c(14, 1)) 
 ```
 
-```{r, eval=TRUE, echo=TRUE}
-map(
-  sw_vehicles, 
-  "pilots", 
-  .default = NA
-  )
+<br>
+
+```{r, eval=FALSE, echo=TRUE}
+map(sw_vehicles, list("pilots", 1))
 ```
 
-```{r, eval=TRUE, echo=TRUE}
-map_chr(
-  sw_vehicles, 
-  "pilots", 
-  .default = NA
-  )
-```
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="40%"}
+
+`.f` accepts
+
+<br>
+
+vector of positions
+
+<br>
+
+list of names and positions
+
+
+:::
+
+:::
+

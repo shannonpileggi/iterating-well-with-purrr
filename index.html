@@ -587,7 +587,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628eefa1" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
+<div class="countdown" id="timer_628ef7a1" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -603,7 +603,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628ef0d2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628ef6cd" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -678,7 +678,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628eef87" style="right:-10%;bottom:-10%;" data-warnwhen="0">
+<div class="countdown" id="timer_628ef5af" style="right:-10%;bottom:-10%;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 </div>
@@ -1241,7 +1241,7 @@ $playedBy
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628ef215" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628ef409" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1298,7 +1298,7 @@ $playedBy
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628ef02b" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628ef505" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1436,7 +1436,7 @@ $playedBy
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_628ef0a4" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_628ef3d5" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1449,6 +1449,7 @@ $playedBy
 <p>I’m using map_TYPE() but some</p>
 <p>individual elements aren’t of length 1.</p>
 </div>
+<p><br></p>
 <div class="r-fit-text">
 <p>They are absent or have length &gt; 1.</p>
 </div>
@@ -1456,15 +1457,192 @@ $playedBy
 <section id="solutions" class="slide level2">
 <h2>Solutions</h2>
 <p><br></p>
-<h4 id="missing-elements">Missing elements?</h4>
+<h3 id="missing-elements">Missing elements?</h3>
 <p>Specify a <code>.default</code> value.</p>
 <p><br></p>
-<h4 id="elements-of-length-1">Elements of length &gt; 1?</h4>
+<h3 id="elements-of-length-1">Elements of length &gt; 1?</h3>
 <p>You can’t make an atomic vector.<code>*</code></p>
 <p>Get happy with a list or list-column.</p>
 <p>Or pick one element, e.g., the first.</p>
 <p><br></p>
 <p><code>*</code> You can, if you are willing to <code>flatten()</code> or <code>squash()</code>.</p>
+</section>
+<section id="default-value" class="slide level2">
+<h2><code>.default</code> value</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="fu">map</span>(sw_vehicles, <span class="st">"pilots"</span>, <span class="at">.default =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] NA
+
+[[2]]
+[1] NA
+
+[[3]]
+[1] NA
+
+[[4]]
+[1] NA
+
+[[5]]
+[1] "http://swapi.co/api/people/1/"  "http://swapi.co/api/people/18/"
+
+[[6]]
+[1] NA
+
+[[7]]
+[1] NA
+
+[[8]]
+[1] "http://swapi.co/api/people/13/"
+
+[[9]]
+[1] NA
+
+[[10]]
+[1] NA
+
+[[11]]
+[1] NA
+
+[[12]]
+[1] NA
+
+[[13]]
+[1] "http://swapi.co/api/people/1/" "http://swapi.co/api/people/5/"
+
+[[14]]
+[1] NA
+
+[[15]]
+[1] NA
+
+[[16]]
+[1] NA
+
+[[17]]
+[1] NA
+
+[[18]]
+[1] NA
+
+[[19]]
+[1] "http://swapi.co/api/people/10/" "http://swapi.co/api/people/32/"
+
+[[20]]
+[1] "http://swapi.co/api/people/44/"
+
+[[21]]
+[1] "http://swapi.co/api/people/11/"
+
+[[22]]
+[1] "http://swapi.co/api/people/70/"
+
+[[23]]
+[1] "http://swapi.co/api/people/11/"
+
+[[24]]
+[1] NA
+
+[[25]]
+[1] NA
+
+[[26]]
+[1] "http://swapi.co/api/people/79/"
+
+[[27]]
+[1] NA
+
+[[28]]
+[1] NA
+
+[[29]]
+[1] NA
+
+[[30]]
+[1] NA
+
+[[31]]
+[1] NA
+
+[[32]]
+[1] NA
+
+[[33]]
+[1] NA
+
+[[34]]
+[1] NA
+
+[[35]]
+[1] NA
+
+[[36]]
+[1] NA
+
+[[37]]
+[1] "http://swapi.co/api/people/67/"
+
+[[38]]
+[1] NA
+
+[[39]]
+[1] NA</code></pre>
+</div>
+</div>
+</section>
+<section id="select-first-element" class="slide level2">
+<h2>select first element</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">map_chr</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>), <span class="at">.default =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] NA                               NA                              
+ [3] NA                               NA                              
+ [5] "http://swapi.co/api/people/1/"  NA                              
+ [7] NA                               "http://swapi.co/api/people/13/"
+ [9] NA                               NA                              
+[11] NA                               NA                              
+[13] "http://swapi.co/api/people/1/"  NA                              
+[15] NA                               NA                              
+[17] NA                               NA                              
+[19] "http://swapi.co/api/people/10/" "http://swapi.co/api/people/44/"
+[21] "http://swapi.co/api/people/11/" "http://swapi.co/api/people/70/"
+[23] "http://swapi.co/api/people/11/" NA                              
+[25] NA                               "http://swapi.co/api/people/79/"
+[27] NA                               NA                              
+[29] NA                               NA                              
+[31] NA                               NA                              
+[33] NA                               NA                              
+[35] NA                               NA                              
+[37] "http://swapi.co/api/people/67/" NA                              
+[39] NA                              </code></pre>
+</div>
+</div>
+</section>
+<section id="more-.f-shortcuts" class="slide level2">
+<h2>more <code>.f</code> shortcuts</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><br></p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">map</span>(got_chars, <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">1</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">map</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<p><code>.f</code> accepts</p>
+<p><br></p>
+<p>vector of positions</p>
+<p><br></p>
+<p>list of names and positions</p>
+</div>
+</div>
 
 <img src="img/purrr-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://github.com/shannonpileggi/iterating-well-with-purrr">Iterating well with purrr</a></p>
