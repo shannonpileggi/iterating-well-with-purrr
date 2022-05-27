@@ -166,7 +166,7 @@ mtcars %>%
 
 ::: {.column width="50%"}
 ```{r echo=TRUE, eval=FALSE}
-
+# library(dplyr) not needed
 
 dplyr::select(mtcars, mpg, cyl) 
 
@@ -662,8 +662,6 @@ Workflow:
 
 ## 1. Do it for one element
 
-
-
 ```{r, echo=TRUE, eval=TRUE}
 got_chars[[9]]
 ```
@@ -676,12 +674,11 @@ got_chars[[9]][["aliases"]]
 
 . . .
 
-<br> 
+<br>
 
 ```{r, echo=TRUE, eval=TRUE}
 length(got_chars[[9]][["aliases"]])
 ```
-
 
 ## 1. Do it for one element, again
 
@@ -696,7 +693,6 @@ length(got_chars[[9]][["aliases"]])
 
 <br>
 
-
 ```{r, echo=TRUE, eval=FALSE}
 # Asha
 got_chars[[13]]
@@ -704,10 +700,16 @@ got_chars[[13]][["aliases"]]
 length(got_chars[[13]][["aliases"]])
 ```
 
-
 ## 2. Find the general recipe.
 
+```{r, echo=TRUE, eval=FALSE}
+# Daenerys
+got_chars[[9]]
+got_chars[[9]][["aliases"]]
+length(got_chars[[9]][["aliases"]])
+```
 
+<br>
 
 `.x <- got_chars[[?]]`
 
@@ -717,8 +719,8 @@ length(got_chars[[13]][["aliases"]])
 
 <br>
 
-* `.x` is a pronoun, like "it"
-* `.x` means "the current element"
+-   `.x` is a pronoun, like "it"
+-   `.x` means "the current element"
 
 ## 3. Drop into map() to do for all.
 
@@ -752,16 +754,14 @@ map(got_chars, function(x) length( x[["aliases"]])) # supported in base R
 map(got_chars,        \(x) length( x[["aliases"]])) # supported R > 4.1.0
 ```
 
-
 ::: footer
 <https://adv-r.hadley.nz/functionals.html#purrr-shortcuts>
 :::
 
-
 ## Your turn
 
 ::: question
-How many ___ does each character have?
+How many \_\_\_ does each character have?
 :::
 
 <brshort>
@@ -771,13 +771,11 @@ How many ___ does each character have?
 | got_chars  | titles, allegiances |
 | sw_people  | vehicles, starships |
 
-
-
 . . .
 
 <br>
 
-::: {.center-x}
+::: center-x
 `map(got_chars, ~ length(.x[["aliases"]]))`
 :::
 
@@ -785,11 +783,11 @@ How many ___ does each character have?
 countdown(minutes = 5)
 ```
 
-
 ## Discussion {visibility="hidden"}
 
 ::: question
-What are some challenges with this output? How could it be improved?
+What are some challenges with this output?
+How could it be improved?
 :::
 
 ```{r}
@@ -797,11 +795,10 @@ countdown(minutes = 1)
 ```
 
 ::: notes
-1. A list is returned.
+1.  A list is returned.
 
-2. We cannot see who is associated with each number of aliases.
+2.  We cannot see who is associated with each number of aliases.
 :::
-
 
 ## Type specific map variants
 
@@ -814,10 +811,7 @@ map_int(got_chars, ~ length(.x[["aliases"]]))
 . . .
 
 ::: columns
-
 ::: {.column width="30%"}
-
-
 `map_lgl()`
 
 `map_int()`
@@ -825,22 +819,16 @@ map_int(got_chars, ~ length(.x[["aliases"]]))
 `map_dbl()`
 
 `map_chr()`
-
 :::
 
 ::: {.column width="70%"}
-
 <br>
 
-returns an atomic *vector* 
+returns an atomic *vector*
 
 of the specified type
-
 :::
-
 :::
-
-
 
 ## Your turn
 
@@ -866,23 +854,23 @@ map(sw_people, ~ .x[["gender"]] == "female")
 map(sw_people, ~ .x[["mass"]])
 ```
 
-
 ```{r}
 countdown(minutes = 3)
 ```
 
 # More purrr
 
-## Review
+## Review \#1
 
-* Lists can be awkward
+<br>
 
-* Lists can be necessary
+### Lists can be awkward.
 
-* Get to know your list
+### Lists can be necessary.
 
-## Review, cont.
+### Get to know your list.
 
+## Review \#2
 
 ```{r, eval=FALSE, echo=TRUE}
 purrr::map(.x, .f, ...)
@@ -911,7 +899,7 @@ map_chr(got_chars, ~ .x[["name"]])
 ```
 
 type specific map variants
- 
+
 ## We extract by name a lot
 
 <br>
@@ -933,9 +921,7 @@ map(sw_people, ~ .x[["mass"]])
 ## `.f` specification & shortcuts
 
 ::: columns
-
 ::: {.column width="55%"}
-
 <br>
 
 <brshort>
@@ -962,15 +948,12 @@ map_chr(got_chars, "name")
 ```{r, eval=FALSE, echo=TRUE}
 map_chr(got_chars, 3)
 ```
-
 :::
 
 ::: {.column width="5%"}
-
 :::
 
 ::: {.column width="40%"}
-
 `.f` accepts
 
 <brshort>
@@ -988,15 +971,10 @@ a name
 <br>
 
 a position
-
 :::
-
 :::
-
 
 ## .f shortcuts {visibility="hidden"}
-
-
 
 ```{r, eval=FALSE, echo=TRUE}
 get_name <- function(x){ x[["name"]] }
@@ -1017,7 +995,6 @@ map_chr(got_chars, ~ .x[["name"]])
 
 . . .
 
-
 <brshort>
 
 ```{r, eval=FALSE, echo=TRUE}
@@ -1035,7 +1012,6 @@ map_chr(got_chars, 3)
 ```
 
 `.f` accepts a position
-
 
 ##  {background-image="img/lego-rstats_103-8826.jpg"}
 
@@ -1059,15 +1035,14 @@ map(minis, "pants")
 ::: footer
 :::
 
-
 ## Your turn
 
 ::: question
-1. Explore a GoT or SW list and find a new element to look at.
+1.  Explore a GoT or SW list and find a new element to look at.
 
-2. Extract it across the whole list with name and position shortcuts for .f.
+2.  Extract it across the whole list with name and position shortcuts for .f.
 
-3. Use map_TYPE() to get an an atomic vector as output.
+3.  Use map_TYPE() to get an an atomic vector as output.
 :::
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -1081,30 +1056,24 @@ map_??(sw_species, ??)
 # etc.
 ```
 
-
 ```{r}
 countdown(minutes = 5)
 ```
-
 
 ## Common problem
 
 <br>
 
-::: {.r-fit-text}
-
+::: r-fit-text
 I'm using map_TYPE() but some
 
 individual elements aren't of length 1.
-
 :::
-
 
 <br>
 
-::: {.r-fit-text}
-
-They are absent or have length > 1.
+::: r-fit-text
+They are absent or have length \> 1.
 :::
 
 ## Solutions
@@ -1119,7 +1088,7 @@ Specify a `.default` value.
 
 . . .
 
-### Elements of length > 1?
+### Elements of length \> 1?
 
 You can't make an atomic vector.`*`
 
@@ -1143,19 +1112,15 @@ map(sw_vehicles, "pilots", .default = NA)
 map_chr(sw_vehicles, list("pilots", 1), .default = NA)
 ```
 
-
 ## more `.f` shortcuts
 
 <br>
 
 ::: columns
-
 ::: {.column width="55%"}
-
 <br>
 
 <br>
-
 
 ```{r, eval=FALSE, echo=TRUE}
 map(got_chars, c(14, 1)) 
@@ -1163,18 +1128,17 @@ map(got_chars, c(14, 1))
 
 <br>
 
+<brshort>
+
 ```{r, eval=FALSE, echo=TRUE}
 map(sw_vehicles, list("pilots", 1))
 ```
-
 :::
 
 ::: {.column width="5%"}
-
 :::
 
 ::: {.column width="40%"}
-
 `.f` accepts
 
 <br>
@@ -1184,9 +1148,230 @@ vector of positions
 <br>
 
 list of names and positions
+:::
+:::
 
+## Another challenge
+
+<br>
+
+```{r, echo = TRUE, eval = TRUE}
+# create readable output
+map_lgl(got_chars, "alive")
+```
+
+<br>
+
+### Who? 🙄
+
+## Named lists \>\>\> unnamed lists
+
+::: columns
+::: {.column width="75%"}
+```{r, echo = TRUE, eval = TRUE}
+# retrieve names of GoT characters
+got_names <- map_chr(got_chars, "name")
+got_names[1:3]
+```
+
+<br>
+
+```{r, echo = TRUE, eval = TRUE}
+# create a named list
+got_chars_named <- set_names(got_chars, got_names)
+str(got_chars_named[1:3], max.level = 1)
+```
+
+<br>
+
+```{r, echo = TRUE, eval = TRUE}
+# create readable output
+map_lgl(got_chars_named, "alive")[1:3]
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="20%"}
+<br>
+
+Names
+
+propagate
+
+in `purrr`
+
+pipelines.
+
+Set them
+
+early and
+
+enjoy!
+:::
+:::
+
+
+## Review \#3
+
+
+```{r, echo=TRUE, eval=FALSE}
+got_names <- map_chr(got_chars, "name")
+got_chars_named <- set_names(got_chars, got_names)
+```
+
+Set list names for a happier life.
+
+. . .
+
+<br>
+
+```{r, echo=TRUE, eval=FALSE}
+map_chr(got_chars, "name")
+map_chr(got_chars, 3)
+map_chr(got_chars, c(3, 1))
+map_chr(got_chars, list("name", 1))
+map_chr(got_chars, ~ .x[["name"]])
+```
+
+There are many ways to specify `.f`.
+
+. . .
+
+<br>
+
+```{r, echo=TRUE, eval=FALSE}
+map(sw_vehicles, "pilots", .default = NA)
+map_chr(sw_vehicles, list("pilots", 1), .default = NA)
+```
+
+`.default` is useful for missing things.
+
+
+## Your turn 
+
+::: question
+Create a named copy of a GoT or SW list with set_names(). Find an element with tricky presence/absence or length. Extract it many ways. 
+:::
+
+::: columns 
+
+::: {.column width="45%"}
+
+::: {.small}
+
+Extraction methods:
+
+* by name
+
+* by position
+
+* by `list("name", pos)` 
+
+* by `c(pos, pos)`
+
+* use `.default` for missing data
+
+* use `map_TYPE()` to coerce output to atomic vector
+
+::: 
 
 :::
 
+::: {.column width="5%"}
 :::
 
+::: {.column width="50%"}
+
+::: {.small}
+
+Finish? Try one of these:
+
+1. Which SW film has the most characters?
+2. Which SW species has the most possible eye colors?
+3. Which GoT character has the most allegiances? Aliases? Titles?
+4. Which GoT character has been played by multiple actors?
+
+:::
+
+::: 
+
+::: 
+
+```{r}
+countdown(minutes = 7, top = "-10%", right = "-10%")
+```
+
+::: footer
+:::
+
+# Inspiration for your future purrr work 
+
+## Additional arguments
+
+<br>
+
+```{r, eval = TRUE, echo = TRUE}
+books <- map(got_chars_named, "books") 
+books[1:2]
+```
+
+. . .
+
+<br>
+
+. . .
+
+```{r, eval = TRUE, echo = TRUE}
+map_chr(books[1:2], ~ paste(.x, collapse = ", ")) 
+```
+
+
+::: footer
+<https://adv-r.hadley.nz/functionals.html#passing-arguments>
+:::
+
+## `map(.x, .f, ...)`
+
+<br>
+
+```{r, eval = TRUE, echo = TRUE}
+books <- map(got_chars_named, "books") 
+books[1:2]
+```
+
+<br>
+
+```{r, eval = TRUE, echo = TRUE}
+map_chr(books[1:2], paste, collapse = ", ")
+```
+
+::: footer
+<https://adv-r.hadley.nz/functionals.html#passing-arguments>
+:::
+
+::: notes
+any arguments that come after f in the call to map() are inserted after the data in individual calls to f()
+:::
+
+
+## Passing arguments
+
+```{r, eval=FALSE, echo=TRUE}
+# map(.x, .f, ...)
+map_chr(books[1:2], paste, collapse = ", ")
+```
+
+<br>
+
+![](img/map-arg.png)
+
+::: footer
+<https://adv-r.hadley.nz/functionals.html#passing-arguments>
+:::
+
+
+::: notes
+any arguments that come after f in the call to map() are inserted after the data in individual calls to f()
+:::
