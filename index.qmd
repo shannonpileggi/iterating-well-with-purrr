@@ -1650,9 +1650,10 @@ map_dfr(minis, \`[\`,
 
 ##  {background-image="img/unsplash.jpg"}
 
-::: r-fit-text
-Go forth, and explore the world of purrr!
-:::
+### Go forth,
+
+### and explore the world of purrr!
+
 
 ::: footer
 Photo from Andriyko Podilnyk on unsplash 
