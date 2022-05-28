@@ -90,3 +90,15 @@ $h3-font-size: 1.15em !default;
   font-family: $font-family-monospace;
   font-size: 2em;
 }
+
+.black-code-smaller {
+  color: #000000;
+  font-family: $font-family-monospace;
+  font-size: 1.5em;
+}
+
+.black-code-smallest {
+  color: #000000;
+  font-family: $font-family-monospace;
+  font-size: 1em;
+}

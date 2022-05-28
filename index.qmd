@@ -19,6 +19,7 @@ library(tidyverse)
 library(countdown)
 library(purrr)
 library(repurrrsive)
+library(gapminder)
 ```
 
 ```{r font-awesome-color}
@@ -1212,6 +1213,21 @@ enjoy!
 :::
 :::
 
+## Example: name propagation
+
+With `tibble::enframe()`, a named list converts to a data frame with names & list-column.
+
+```{r, echo=TRUE, eval=TRUE}
+allegiances <- map(got_chars_named, "allegiances")
+tibble::enframe(allegiances, value = "allegiances")
+```
+
+
+::: footer
+For more on list columns, see rstudio::conf(2018) Data Rectangling by Jenny Bryan 
+
+<https://www.rstudio.com/resources/rstudioconf-2018/data-rectangling/>
+:::
 
 ## Review \#3
 
@@ -1374,4 +1390,272 @@ map_chr(books[1:2], paste, collapse = ", ")
 
 ::: notes
 any arguments that come after f in the call to map() are inserted after the data in individual calls to f()
+:::
+
+##
+
+### So, yes, 
+
+### there are many ways to specify `.f`.
+
+
+```{r, eval=FALSE, echo = TRUE}
+map(got_chars, ~ length(.x[["aliases"]]))
+map_chr(got_chars, "name")
+map_chr(books, paste, collapse = ", ")
+map(sw_vehicles, list("pilots", 1))
+```
+
+![](img/tutorial-purr.png){width=70%}
+
+
+::: footer
+https://jennybc.github.io/purrr-tutorial/ls03_map-function-syntax.html#load_packages
+:::
+
+## Walk
+
+```{r, echo=TRUE, eval=TRUE}
+countries <- c("Argentina", "Brazil")
+gap_small <- gapminder %>%
+ filter(country %in% countries & year > 2000)
+gap_small
+```
+
+<brshort>
+
+. . . 
+
+::: columns 
+
+::: {.column width="65%"}
+
+```{r, echo=TRUE, eval=FALSE}
+write_one <- function(x) {
+ filename <- paste0(x, ".csv")
+ dataset <- filter(gap_small, country == x)
+ write_csv(dataset, filename)
+}
+```
+
+<brshort>
+
+```{r, echo=TRUE, eval=FALSE}
+walk(countries, write_one)
+list.files(pattern = "*.csv")
+```
+
+<brshort>
+
+```{r, echo=TRUE, eval=FALSE}
+#> [1] "Argentina.csv" "Brazil.csv" 
+```
+
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%"}
+
+`walk()` is `map()` 
+
+but 
+
+returns no output
+:::
+
+:::
+
+
+## 
+
+### `map_dfr()` rowbinds a list of data frames
+
+<br>
+
+```{r, echo=TRUE, eval=FALSE}
+csv_files <- list.files(pattern = "*.csv")
+csv_files
+```
+
+<brshort>
+
+```{r, echo=TRUE, eval=FALSE}
+#> [1] "Argentina.csv" "Brazil.csv" 
+```
+
+<br>
+
+```{r, echo=TRUE, eval=FALSE}
+map_dfr(csv_files, ~ read_csv(.x))
+```
+
+<brshort>
+
+```{r,echo=FALSE, eval = TRUE}
+gap_small %>% 
+  mutate(across(c(country, continent), as.character)) %>% 
+  mutate_if(is.numeric, as.double)
+```
+
+## 
+
+<br>
+
+### mapping over  
+### 2 or more things 
+### in parallel
+
+
+##  {background-image="img/map2_hair.jpg"}
+
+<br>
+
+::: {.black-code .center-x}
+.y = hair
+
+.x = minis
+:::
+
+::: footer
+:::
+
+
+##  {background-image="img/lego-rstats_103-8826.jpg"}
+
+<br>
+
+::: {.black-code-smaller .center-x}
+map2(minis, hair, enhair)
+:::
+
+::: footer
+:::
+
+##  {background-image="img/map2_weapons.jpg"}
+
+<br>
+
+<brshort>
+
+::: {.black-code .center-x}
+.y = weapons
+
+.x = minis
+:::
+
+::: footer
+:::
+
+
+##  {background-image="img/lego-rstats_104-8838.jpg"}
+
+<br>
+
+::: {.black-code-smaller .center-x}
+map2(minis, weapons, arm)
+:::
+
+::: footer
+:::
+
+##  {background-image="img/lego-rstats_104-8838.jpg"}
+
+<brshort>
+
+::: {.black-code-smaller}
+minis %>%
+
+&nbsp;&nbsp; map2(hair, enhair) %>% 
+
+&nbsp;&nbsp; map2(weapons, arm)
+:::
+
+::: footer
+:::
+
+
+## `map2()`
+
+iterates over two vectors in parallel.
+
+![](img/map2-arg.png)
+
+::: footer
+<https://adv-r.hadley.nz/functionals.html#map2>
+:::
+
+##  {background-image="img/lego-rstats_124-8843.jpg"}
+
+
+
+::: {.black-code-smallest}
+df <- tibble(pants, torso, head)
+
+embody <- function(pants, torso, head) 
+
+&nbsp;&nbsp; insert(insert(pants, torso), head)
+:::
+
+::: footer
+:::
+
+
+##  {background-image="img/embody.png"}
+
+::: {.black-code .center-x}
+pmap(df, embody)
+:::
+
+::: footer
+:::
+
+
+## `pmap()`
+
+supply a list to iterate over any number of arguments in parallel.
+
+![](img/pmap.png)
+
+::: footer
+<https://adv-r.hadley.nz/functionals.html#pmap>
+:::
+
+
+##  {background-image="img/map_dfr.png"}
+
+::: {.black-code-smallest}
+map_dfr(minis, \`[\`,
+
+&nbsp;&nbsp; c("pants", "torso", "head")
+:::
+
+::: footer
+:::
+
+## For more
+
+### [rstd.io/row-work](rstd.io/row-work)
+
+![](img/tutorial-row.png)
+
+## Map guide
+
+![](img/map-guide.png)
+
+::: footer
+<https://adv-r.hadley.nz/functionals.html#map-variants>
+:::
+
+##  {background-image="img/unsplash.jpg"}
+
+::: r-fit-text
+Go forth, and explore the world of purrr!
+:::
+
+::: footer
+Photo from Andriyko Podilnyk on unsplash 
+
+<https://unsplash.com/photos/RCfi7vgJjUY>
 :::
