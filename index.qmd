@@ -9,6 +9,7 @@ format:
     highlight-style: a11y
     transition: fade
     slide-number: true
+    chalkboard: true
 editor: visual
 execute:
   freeze: auto
@@ -57,7 +58,7 @@ Pretty recent?
 
 `r fontawesome::fa("check", fill = fa_fill)` RStudio installed?
 
-     I'm on build 485
+     I'm on 2022.02.3+492
 
 `r fontawesome::fa("check", fill = fa_fill)` Have these packages?
 
@@ -367,6 +368,8 @@ paste0("The ", year, " RStudio Conference was in ", location, ".")
 ```
 
 <brshort>
+
+. . .
 
 ```{r, echo = TRUE}
 glue::glue("The {year} RStudio Conference was in {location}.")
@@ -1099,7 +1102,9 @@ Or pick one element, e.g., the first.
 
 <br>
 
+::: footer
 `*` You can, if you are willing to `flatten()` or `squash()`.
+:::
 
 ## `.default` value
 
@@ -1241,7 +1246,7 @@ Set list names for a happier life.
 
 . . .
 
-<br>
+<brshort>
 
 ```{r, echo=TRUE, eval=FALSE}
 map_chr(got_chars, "name")
@@ -1255,7 +1260,7 @@ There are many ways to specify `.f`.
 
 . . .
 
-<br>
+<brshort>
 
 ```{r, echo=TRUE, eval=FALSE}
 map(sw_vehicles, "pilots", .default = NA)
@@ -1337,7 +1342,6 @@ books[1:2]
 
 <br>
 
-. . .
 
 ```{r, eval = TRUE, echo = TRUE}
 map_chr(books[1:2], ~ paste(.x, collapse = ", ")) 
