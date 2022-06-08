@@ -1096,7 +1096,7 @@ Or pick one element, e.g., the first.
 <br>
 
 ::: footer
-`*` You can, if you are willing to `flatten()` or `squash()`.
+`*` You can, if you are willing to `flatten()`.
 :::
 
 ## `.default` value

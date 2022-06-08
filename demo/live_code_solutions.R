@@ -250,6 +250,7 @@ got_chars %>%
     num_playedBy = map_int(playedBy, length)
   ) 
 
+
 # 4. Which GoT character has been played by multiple actors? -------------------
 got_chars_named |> 
   map("playedBy") |> 
@@ -257,11 +258,33 @@ got_chars_named |>
 
 
 # ------------------------------------------------------------------------------
-## doing the inverse
+# doing the inverse
 # ------------------------------------------------------------------------------
 
 purrr::map_dfr(repurrrsive::got_chars,`[`, c("name", "gender", "culture"))
 
+purrr::map(repurrrsive::got_chars,`[`, c("name", "gender", "culture"))
+
 got_chars[[1]][["name"]]
 got_chars[[1]][["gender"]]
 got_chars[[1]][["culture"]]
+
+
+# ------------------------------------------------------------------------------
+# experiment with rowwise
+# ------------------------------------------------------------------------------
+
+
+dat <- got_chars_named |> 
+  enframe() 
+
+dat |> 
+  rowwise() |> 
+  mutate(
+    num_allegiances = pluck(value, "allegiances") |> length()
+  )
+
+dat |> 
+  mutate(
+    num_allegiances = map_int(value, ~ length(pluck(.x, "allegiances")) )
+  )
