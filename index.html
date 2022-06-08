@@ -445,8 +445,8 @@
 <section id="pipes" class="slide level2">
 <h2>Pipes</h2>
 <ul>
-<li><p>2021+ (R <span class="math inline">\(\geq\)</span> 4.1.0) native R pipe <code>|&gt;</code></p></li>
 <li><p>2014+ magrittr pipe <code>%&gt;%</code></p></li>
+<li><p>2021+ (R <span class="math inline">\(\geq\)</span> 4.1.0) native R pipe <code>|&gt;</code></p></li>
 </ul>
 <p>2022 Isabella Velásquez Understanding the native R pipe |&gt; <a href="https://ivelasq.rbind.io/blog/understanding-the-r-pipe/" class="uri">https://ivelasq.rbind.io/blog/understanding-the-r-pipe/</a></p>
 <div class="fragment">
@@ -459,30 +459,21 @@
 <span id="cb1-3"><a href="#cb1-3"></a>arg1 <span class="sc">|&gt;</span>  </span>
 <span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">whatever</span>(arg2, arg3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><brshort></brshort></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">whatever</span>(arg1, arg2, arg3, ...)</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>arg1 <span class="sc">%&gt;%</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">whatever</span>(arg2, arg3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">mean</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="dv">0</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><brshort></brshort></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">select</span>(mtcars, mpg, cyl) </span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a>mtcars <span class="sc">%&gt;%</span> </span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">mean</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="dv">0</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
+<div class="footer">
+<p>Change <code>CTRL + Shift + M</code> shortcut to native pipe:</p>
+<p><code>Tools -&gt; Global Options -&gt; Code -&gt;</code></p>
+<p>&nbsp;&nbsp; <code>Editing -&gt; check Use Native Pipe Operator</code></p>
 </div>
 </div>
 </section>
@@ -505,23 +496,23 @@
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">select</span>(mtcars, mpg, cyl) </span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a>mtcars <span class="sc">%&gt;%</span> </span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">select</span>(mtcars, mpg, cyl) </span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>mtcars <span class="sc">|&gt;</span>  </span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># library(dplyr) not needed</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(mtcars, mpg, cyl) </span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a>mtcars <span class="sc">%&gt;%</span> </span>
-<span id="cb6-6"><a href="#cb6-6"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># library(dplyr) not needed</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(mtcars, mpg, cyl) </span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>mtcars <span class="sc">|&gt;</span>  </span>
+<span id="cb4-6"><a href="#cb4-6"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -535,9 +526,9 @@
 <section id="gapminder-example" class="slide level2">
 <h2>Gapminder example</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb7-3"><a href="#cb7-3"></a>gapminder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>gapminder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 6
    country     continent  year lifeExp      pop gdpPercap
@@ -562,36 +553,36 @@
 <section id="gapminder-life-expectancy" class="slide level2">
 <h2>Gapminder life expectancy</h2>
 
-<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section id="section" class="slide level2">
 <h2></h2>
 <div class="question">
 <p>What am I doing? Are there mistakes?</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>africa <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Africa"</span>, ]</span>
-<span id="cb9-2"><a href="#cb9-2"></a>africa_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(africa<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(africa<span class="sc">$</span>lifeExp)</span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a>americas <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Americas"</span>, ]</span>
-<span id="cb9-5"><a href="#cb9-5"></a>americas_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(americas<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(americas<span class="sc">$</span>lifeExp)</span>
-<span id="cb9-6"><a href="#cb9-6"></a></span>
-<span id="cb9-7"><a href="#cb9-7"></a>asia <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Asia"</span>, ]</span>
-<span id="cb9-8"><a href="#cb9-8"></a>asia_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(asia<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(africa<span class="sc">$</span>lifeExp)</span>
-<span id="cb9-9"><a href="#cb9-9"></a></span>
-<span id="cb9-10"><a href="#cb9-10"></a>europe <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Europe"</span>, ]</span>
-<span id="cb9-11"><a href="#cb9-11"></a>europe_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(europe<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(europe<span class="sc">$</span>lifeExp)</span>
-<span id="cb9-12"><a href="#cb9-12"></a></span>
-<span id="cb9-13"><a href="#cb9-13"></a>oceania <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Oceania"</span>, ]</span>
-<span id="cb9-14"><a href="#cb9-14"></a>oceania_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(europe<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(oceania<span class="sc">$</span>lifeExp)</span>
-<span id="cb9-15"><a href="#cb9-15"></a></span>
-<span id="cb9-16"><a href="#cb9-16"></a><span class="fu">cbind</span>(</span>
-<span id="cb9-17"><a href="#cb9-17"></a>  <span class="at">continent =</span> <span class="fu">c</span>(<span class="st">"Africa"</span>, <span class="st">"Asias"</span>, <span class="st">"Europe"</span>, <span class="st">"Oceania"</span>),</span>
-<span id="cb9-18"><a href="#cb9-18"></a>  <span class="at">max_minus_min =</span> <span class="fu">c</span>(africa_mm, americas_mm, asia_mm, europe_mm, oceania_mm)</span>
-<span id="cb9-19"><a href="#cb9-19"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>africa <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Africa"</span>, ]</span>
+<span id="cb7-2"><a href="#cb7-2"></a>africa_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(africa<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(africa<span class="sc">$</span>lifeExp)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>americas <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Americas"</span>, ]</span>
+<span id="cb7-5"><a href="#cb7-5"></a>americas_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(americas<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(americas<span class="sc">$</span>lifeExp)</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>asia <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Asia"</span>, ]</span>
+<span id="cb7-8"><a href="#cb7-8"></a>asia_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(asia<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(africa<span class="sc">$</span>lifeExp)</span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a>europe <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Europe"</span>, ]</span>
+<span id="cb7-11"><a href="#cb7-11"></a>europe_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(europe<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(europe<span class="sc">$</span>lifeExp)</span>
+<span id="cb7-12"><a href="#cb7-12"></a></span>
+<span id="cb7-13"><a href="#cb7-13"></a>oceania <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">"Oceania"</span>, ]</span>
+<span id="cb7-14"><a href="#cb7-14"></a>oceania_mm <span class="ot">&lt;-</span> <span class="fu">max</span>(europe<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(oceania<span class="sc">$</span>lifeExp)</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="fu">cbind</span>(</span>
+<span id="cb7-17"><a href="#cb7-17"></a>  <span class="at">continent =</span> <span class="fu">c</span>(<span class="st">"Africa"</span>, <span class="st">"Asias"</span>, <span class="st">"Europe"</span>, <span class="st">"Oceania"</span>),</span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="at">max_minus_min =</span> <span class="fu">c</span>(africa_mm, americas_mm, asia_mm, europe_mm, oceania_mm)</span>
+<span id="cb7-19"><a href="#cb7-19"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629ff0fa" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
+<div class="countdown" id="timer_629ffc67" style="right:0;bottom:-10%;font-size:2em;" data-audio="true" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -607,7 +598,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629ff301" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_629ffc3a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -616,9 +607,9 @@
 <section id="an-alternative-solution" class="slide level2">
 <h2>An alternative solution</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a> <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a> <span class="fu">summarize</span>(<span class="at">max_minus_min =</span> <span class="fu">max</span>(lifeExp) <span class="sc">-</span> <span class="fu">min</span>(lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a> <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3"></a> <span class="fu">summarize</span>(<span class="at">max_minus_min =</span> <span class="fu">max</span>(lifeExp) <span class="sc">-</span> <span class="fu">min</span>(lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="columns">
@@ -655,14 +646,14 @@
 <section id="more-iteration" class="slide level2">
 <h2>More iteration</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>location <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Orlando"</span>, <span class="st">"San Diego"</span>, <span class="st">"Austin"</span>, <span class="st">"San Francisco"</span>, <span class="st">"remote"</span>)</span>
-<span id="cb13-3"><a href="#cb13-3"></a></span>
-<span id="cb13-4"><a href="#cb13-4"></a>conf <span class="ot">&lt;-</span> <span class="fu">rep_len</span>(<span class="st">""</span>, <span class="fu">length</span>(year))</span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(conf)) {</span>
-<span id="cb13-6"><a href="#cb13-6"></a> conf[i] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"The "</span>, year[i], <span class="st">" RStudio Conference was in "</span>, location[i], <span class="st">"."</span>)</span>
-<span id="cb13-7"><a href="#cb13-7"></a>}</span>
-<span id="cb13-8"><a href="#cb13-8"></a>conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>location <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Orlando"</span>, <span class="st">"San Diego"</span>, <span class="st">"Austin"</span>, <span class="st">"San Francisco"</span>, <span class="st">"remote"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a>conf <span class="ot">&lt;-</span> <span class="fu">rep_len</span>(<span class="st">""</span>, <span class="fu">length</span>(year))</span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(conf)) {</span>
+<span id="cb11-6"><a href="#cb11-6"></a> conf[i] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"The "</span>, year[i], <span class="st">" RStudio Conference was in "</span>, location[i], <span class="st">"."</span>)</span>
+<span id="cb11-7"><a href="#cb11-7"></a>}</span>
+<span id="cb11-8"><a href="#cb11-8"></a>conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -682,7 +673,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629ff30d" style="right:-10%;bottom:-10%;" data-warnwhen="0">
+<div class="countdown" id="timer_629ffac6" style="right:-10%;bottom:-10%;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 </div>
@@ -692,12 +683,12 @@
 <section id="more-iteration-cont." class="slide level2">
 <h2>More iteration, cont.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>location <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Orlando"</span>, <span class="st">"San Diego"</span>, <span class="st">"Austin"</span>, <span class="st">"San Francisco"</span>, <span class="st">"remote"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>year <span class="ot">&lt;-</span> <span class="dv">2017</span><span class="sc">:</span><span class="dv">2021</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>location <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Orlando"</span>, <span class="st">"San Diego"</span>, <span class="st">"Austin"</span>, <span class="st">"San Francisco"</span>, <span class="st">"remote"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">paste0</span>(<span class="st">"The "</span>, year, <span class="st">" RStudio Conference was in "</span>, location, <span class="st">"."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">paste0</span>(<span class="st">"The "</span>, year, <span class="st">" RStudio Conference was in "</span>, location, <span class="st">"."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "The 2017 RStudio Conference was in Orlando."      
 [2] "The 2018 RStudio Conference was in San Diego."    
@@ -709,7 +700,7 @@
 <p><brshort></brshort></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"The {year} RStudio Conference was in {location}."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"The {year} RStudio Conference was in {location}."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The 2017 RStudio Conference was in Orlando.
 The 2018 RStudio Conference was in San Diego.
@@ -742,13 +733,13 @@ The 2021 RStudio Conference was in remote.</code></pre>
 </ul>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># &lt;-- install purrr + much more</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">library</span>(tidyverse)            <span class="co"># &lt;-- loads purrr + much more</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># &lt;-- install purrr + much more</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">library</span>(tidyverse)            <span class="co"># &lt;-- loads purrr + much more</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">install.packages</span>(<span class="st">"purrr"</span>)     <span class="co"># &lt;-- installs only purrr</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">library</span>(purrr)                <span class="co"># &lt;-- loads only purrr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">install.packages</span>(<span class="st">"purrr"</span>)     <span class="co"># &lt;-- installs only purrr</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="fu">library</span>(purrr)                <span class="co"># &lt;-- loads only purrr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="purrr-vs-apply" class="slide level2">
@@ -765,9 +756,9 @@ The 2021 RStudio Conference was in remote.</code></pre>
 <section id="data" class="slide level2">
 <h2>Data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">library</span>(purrr)</span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">library</span>(repurrrsive)</span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="fu">help</span>(<span class="at">package =</span> <span class="st">"repurrrsive"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">library</span>(repurrrsive)</span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="fu">help</span>(<span class="at">package =</span> <span class="st">"repurrrsive"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="columns">
 <div class="column" style="width:47%;">
@@ -820,15 +811,15 @@ The 2021 RStudio Conference was in remote.</code></pre>
 <section id="list-exploration" class="slide level2">
 <h2>List exploration</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">str</span>(x, <span class="at">list.len =</span> ?, <span class="at">max.level =</span> ?)</span>
-<span id="cb23-2"><a href="#cb23-2"></a></span>
-<span id="cb23-3"><a href="#cb23-3"></a>x[i]</span>
-<span id="cb23-4"><a href="#cb23-4"></a></span>
-<span id="cb23-5"><a href="#cb23-5"></a>x[[i]]</span>
-<span id="cb23-6"><a href="#cb23-6"></a></span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="fu">str</span>(x[[i]], ...)</span>
-<span id="cb23-8"><a href="#cb23-8"></a></span>
-<span id="cb23-9"><a href="#cb23-9"></a><span class="fu">View</span>(x) <span class="co"># in RStudio</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">str</span>(x, <span class="at">list.len =</span> ?, <span class="at">max.level =</span> ?)</span>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a>x[i]</span>
+<span id="cb21-4"><a href="#cb21-4"></a></span>
+<span id="cb21-5"><a href="#cb21-5"></a>x[[i]]</span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="fu">str</span>(x[[i]], ...)</span>
+<span id="cb21-8"><a href="#cb21-8"></a></span>
+<span id="cb21-9"><a href="#cb21-9"></a><span class="fu">View</span>(x) <span class="co"># in RStudio</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="subsetting-lists" class="slide level2">
@@ -941,12 +932,12 @@ The 2021 RStudio Conference was in remote.</code></pre>
 <section id="purrrmap.x-.f-..." class="slide level2">
 <h2><code>purrr::map(.x, .f, ...)</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>.x <span class="ot">&lt;-</span> SOME VECTOR OR LIST</span>
-<span id="cb24-2"><a href="#cb24-2"></a>out <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">length</span>(.x))</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(out)) {</span>
-<span id="cb24-4"><a href="#cb24-4"></a> out[[i]] <span class="ot">&lt;-</span> <span class="fu">.f</span>(.x[[i]])</span>
-<span id="cb24-5"><a href="#cb24-5"></a>}</span>
-<span id="cb24-6"><a href="#cb24-6"></a>out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>.x <span class="ot">&lt;-</span> SOME VECTOR OR LIST</span>
+<span id="cb22-2"><a href="#cb22-2"></a>out <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">length</span>(.x))</span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(out)) {</span>
+<span id="cb22-4"><a href="#cb22-4"></a> out[[i]] <span class="ot">&lt;-</span> <span class="fu">.f</span>(.x[[i]])</span>
+<span id="cb22-5"><a href="#cb22-5"></a>}</span>
+<span id="cb22-6"><a href="#cb22-6"></a>out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><br> <code>purrr::map()</code> is a nice way to write a for loop.</p>
@@ -976,7 +967,7 @@ The 2021 RStudio Conference was in remote.</code></pre>
 <section id="do-it-for-one-element" class="slide level2">
 <h2>1. Do it for one element</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>got_chars[[<span class="dv">9</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>got_chars[[<span class="dv">9</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$url
 [1] "https://www.anapioficeandfire.com/api/characters/1303"
@@ -1047,7 +1038,7 @@ $playedBy
 <section id="do-it-for-one-element-1" class="slide level2">
 <h2>1. Do it for one element</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Dany"                    "Daenerys Stormborn"     
  [3] "The Unburnt"             "Mother of Dragons"      
@@ -1060,7 +1051,7 @@ $playedBy
 <div class="fragment">
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">length</span>(got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">length</span>(got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11</code></pre>
 </div>
@@ -1070,28 +1061,28 @@ $playedBy
 <section id="do-it-for-one-element-again" class="slide level2">
 <h2>1. Do it for one element, again</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Daenerys</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>got_chars[[<span class="dv">9</span>]]</span>
-<span id="cb31-3"><a href="#cb31-3"></a>got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]]</span>
-<span id="cb31-4"><a href="#cb31-4"></a><span class="fu">length</span>(got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># Daenerys</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>got_chars[[<span class="dv">9</span>]]</span>
+<span id="cb29-3"><a href="#cb29-3"></a>got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]]</span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="fu">length</span>(got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># Asha</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>got_chars[[<span class="dv">13</span>]]</span>
-<span id="cb32-3"><a href="#cb32-3"></a>got_chars[[<span class="dv">13</span>]][[<span class="st">"aliases"</span>]]</span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="fu">length</span>(got_chars[[<span class="dv">13</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># Asha</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>got_chars[[<span class="dv">13</span>]]</span>
+<span id="cb30-3"><a href="#cb30-3"></a>got_chars[[<span class="dv">13</span>]][[<span class="st">"aliases"</span>]]</span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="fu">length</span>(got_chars[[<span class="dv">13</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
 <section id="find-the-general-recipe." class="slide level2">
 <h2>2. Find the general recipe.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Daenerys</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>got_chars[[<span class="dv">9</span>]]</span>
-<span id="cb33-3"><a href="#cb33-3"></a>got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]]</span>
-<span id="cb33-4"><a href="#cb33-4"></a><span class="fu">length</span>(got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Daenerys</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>got_chars[[<span class="dv">9</span>]]</span>
+<span id="cb31-3"><a href="#cb31-3"></a>got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]]</span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="fu">length</span>(got_chars[[<span class="dv">9</span>]][[<span class="st">"aliases"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p><code>.x &lt;- got_chars[[?]]</code></p>
@@ -1109,7 +1100,7 @@ $playedBy
 <p><code>.x &lt;- got_chars[[?]]</code></p>
 <p><code>length(.x[["aliases"]])</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 4
@@ -1206,7 +1197,7 @@ $playedBy
 <section id="anonymous-functions" class="slide level2">
 <h2>Anonymous functions</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p><code>~</code> is shortcut for anonymous functions supported in <code>purrr</code></p>
@@ -1214,9 +1205,9 @@ $playedBy
 <div class="fragment">
 <p>Three ways of specifying anonymous functions:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">map</span>(got_chars,           <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]])) <span class="co"># supported in purrr</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">map</span>(got_chars, <span class="cf">function</span>(x) <span class="fu">length</span>( x[[<span class="st">"aliases"</span>]])) <span class="co"># supported in base R</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a><span class="fu">map</span>(got_chars,        \(x) <span class="fu">length</span>( x[[<span class="st">"aliases"</span>]])) <span class="co"># supported R &gt; 4.1.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">map</span>(got_chars,           <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]])) <span class="co"># supported in purrr</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">map</span>(got_chars, <span class="cf">function</span>(x) <span class="fu">length</span>( x[[<span class="st">"aliases"</span>]])) <span class="co"># supported in base R</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">map</span>(got_chars,        \(x) <span class="fu">length</span>( x[[<span class="st">"aliases"</span>]])) <span class="co"># supported R &gt; 4.1.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="footer">
 <p><a href="https://adv-r.hadley.nz/functionals.html#purrr-shortcuts" class="uri">https://adv-r.hadley.nz/functionals.html#purrr-shortcuts</a></p>
@@ -1254,7 +1245,7 @@ $playedBy
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629ff370" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_629ffc97" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1265,7 +1256,7 @@ $playedBy
 <section id="type-specific-map-variants" class="slide level2">
 <h2>Type specific map variants</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  4 11  1  1  1  1  1  1 11  5 16  1  2  5  3  3  3  5  0  3  4  1  8  2  1
 [26]  5  1  4  7  3</code></pre>
@@ -1293,25 +1284,25 @@ $playedBy
 <p>Replace map() with type-specific map().</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># What's each character's name?</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
-<span id="cb40-3"><a href="#cb40-3"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
-<span id="cb40-4"><a href="#cb40-4"></a></span>
-<span id="cb40-5"><a href="#cb40-5"></a><span class="co"># What color is each SW character's hair?</span></span>
-<span id="cb40-6"><a href="#cb40-6"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"hair_color"</span>]])</span>
-<span id="cb40-7"><a href="#cb40-7"></a></span>
-<span id="cb40-8"><a href="#cb40-8"></a><span class="co"># Is the GoT character alive?</span></span>
-<span id="cb40-9"><a href="#cb40-9"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"alive"</span>]])</span>
-<span id="cb40-10"><a href="#cb40-10"></a></span>
-<span id="cb40-11"><a href="#cb40-11"></a><span class="co"># Is the SW character female?</span></span>
-<span id="cb40-12"><a href="#cb40-12"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"gender"</span>]] <span class="sc">==</span> <span class="st">"female"</span>)</span>
-<span id="cb40-13"><a href="#cb40-13"></a></span>
-<span id="cb40-14"><a href="#cb40-14"></a><span class="co"># How heavy is each SW character?</span></span>
-<span id="cb40-15"><a href="#cb40-15"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"mass"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># What's each character's name?</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
+<span id="cb38-4"><a href="#cb38-4"></a></span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="co"># What color is each SW character's hair?</span></span>
+<span id="cb38-6"><a href="#cb38-6"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"hair_color"</span>]])</span>
+<span id="cb38-7"><a href="#cb38-7"></a></span>
+<span id="cb38-8"><a href="#cb38-8"></a><span class="co"># Is the GoT character alive?</span></span>
+<span id="cb38-9"><a href="#cb38-9"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"alive"</span>]])</span>
+<span id="cb38-10"><a href="#cb38-10"></a></span>
+<span id="cb38-11"><a href="#cb38-11"></a><span class="co"># Is the SW character female?</span></span>
+<span id="cb38-12"><a href="#cb38-12"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"gender"</span>]] <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb38-13"><a href="#cb38-13"></a></span>
+<span id="cb38-14"><a href="#cb38-14"></a><span class="co"># How heavy is each SW character?</span></span>
+<span id="cb38-15"><a href="#cb38-15"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"mass"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629ff3af" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_629ffb35" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1332,22 +1323,22 @@ $playedBy
 <section id="review-2" class="slide level2">
 <h2>Review #2</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(.x, .f, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>purrr<span class="sc">::</span><span class="fu">map</span>(.x, .f, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>for every element of <code>.x</code> do <code>.f</code></p>
 <p><br></p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>quick anonymous functions via formula</p>
 <p><br></p>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">map_lgl</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"gender"</span>]] <span class="sc">==</span> <span class="st">"female"</span>)</span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span>
-<span id="cb43-3"><a href="#cb43-3"></a><span class="fu">map_chr</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"name"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">map_lgl</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"gender"</span>]] <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">map_int</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="fu">map_chr</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"name"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>type specific map variants</p>
 </div>
@@ -1356,17 +1347,17 @@ $playedBy
 <h2>We extract by name a lot</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># What's each character's name?</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
-<span id="cb44-3"><a href="#cb44-3"></a></span>
-<span id="cb44-4"><a href="#cb44-4"></a><span class="co"># What color is each SW character's hair?</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"hair_color"</span>]])</span>
-<span id="cb44-6"><a href="#cb44-6"></a></span>
-<span id="cb44-7"><a href="#cb44-7"></a><span class="co"># Is the GoT character alive?</span></span>
-<span id="cb44-8"><a href="#cb44-8"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"alive"</span>]])</span>
-<span id="cb44-9"><a href="#cb44-9"></a></span>
-<span id="cb44-10"><a href="#cb44-10"></a><span class="co"># How heavy is each SW character?</span></span>
-<span id="cb44-11"><a href="#cb44-11"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"mass"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># What's each character's name?</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span>.x[[<span class="st">"name"</span>]])</span>
+<span id="cb42-3"><a href="#cb42-3"></a></span>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="co"># What color is each SW character's hair?</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"hair_color"</span>]])</span>
+<span id="cb42-6"><a href="#cb42-6"></a></span>
+<span id="cb42-7"><a href="#cb42-7"></a><span class="co"># Is the GoT character alive?</span></span>
+<span id="cb42-8"><a href="#cb42-8"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"alive"</span>]])</span>
+<span id="cb42-9"><a href="#cb42-9"></a></span>
+<span id="cb42-10"><a href="#cb42-10"></a><span class="co"># How heavy is each SW character?</span></span>
+<span id="cb42-11"><a href="#cb42-11"></a><span class="fu">map</span>(sw_people, <span class="sc">~</span> .x[[<span class="st">"mass"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="f-specification-shortcuts" class="slide level2">
@@ -1376,20 +1367,20 @@ $playedBy
 <p><br></p>
 <p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>get_name <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ x[[<span class="st">"name"</span>]] }</span>
-<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">map_chr</span>(got_chars, get_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>get_name <span class="ot">&lt;-</span> <span class="cf">function</span>(x){ x[[<span class="st">"name"</span>]] }</span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">map_chr</span>(got_chars, get_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">map_chr</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"name"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">map_chr</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"name"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">map_chr</span>(got_chars, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">map_chr</span>(got_chars, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -1437,18 +1428,18 @@ $playedBy
 </ol>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># GoT</span></span>
-<span id="cb53-2"><a href="#cb53-2"></a>map_??(got_chars, ??)</span>
-<span id="cb53-3"><a href="#cb53-3"></a></span>
-<span id="cb53-4"><a href="#cb53-4"></a><span class="co"># Star Wars</span></span>
-<span id="cb53-5"><a href="#cb53-5"></a>map_??(sw_people, ??)</span>
-<span id="cb53-6"><a href="#cb53-6"></a>map_??(sw_vehicles, ??)</span>
-<span id="cb53-7"><a href="#cb53-7"></a>map_??(sw_species, ??)</span>
-<span id="cb53-8"><a href="#cb53-8"></a><span class="co"># etc.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># GoT</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>map_??(got_chars, ??)</span>
+<span id="cb51-3"><a href="#cb51-3"></a></span>
+<span id="cb51-4"><a href="#cb51-4"></a><span class="co"># Star Wars</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a>map_??(sw_people, ??)</span>
+<span id="cb51-6"><a href="#cb51-6"></a>map_??(sw_vehicles, ??)</span>
+<span id="cb51-7"><a href="#cb51-7"></a>map_??(sw_species, ??)</span>
+<span id="cb51-8"><a href="#cb51-8"></a><span class="co"># etc.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629ff0a0" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_629ffc7d" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1484,7 +1475,7 @@ $playedBy
 <section id="default-value" class="slide level2">
 <h2><code>.default</code> value</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">map</span>(sw_vehicles, <span class="st">"pilots"</span>, <span class="at">.default =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">map</span>(sw_vehicles, <span class="st">"pilots"</span>, <span class="at">.default =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] NA
@@ -1608,7 +1599,7 @@ $playedBy
 <section id="select-first-element" class="slide level2">
 <h2>select first element</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">map_chr</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>), <span class="at">.default =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">map_chr</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>), <span class="at">.default =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] NA                               NA                              
  [3] NA                               NA                              
@@ -1641,12 +1632,12 @@ $playedBy
 <p><br></p>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">map</span>(got_chars, <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">1</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">map</span>(got_chars, <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">1</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">map</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">map</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -1663,8 +1654,8 @@ $playedBy
 <h2>Another challenge</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># create readable output</span></span>
-<span id="cb60-2"><a href="#cb60-2"></a><span class="fu">map_lgl</span>(got_chars, <span class="st">"alive"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># create readable output</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a><span class="fu">map_lgl</span>(got_chars, <span class="st">"alive"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
 [13]  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE
@@ -1679,18 +1670,18 @@ $playedBy
 <div class="columns">
 <div class="column" style="width:75%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># retrieve names of GoT characters</span></span>
-<span id="cb62-2"><a href="#cb62-2"></a>got_names <span class="ot">&lt;-</span> <span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span>
-<span id="cb62-3"><a href="#cb62-3"></a>got_names[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># retrieve names of GoT characters</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a>got_names <span class="ot">&lt;-</span> <span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span>
+<span id="cb60-3"><a href="#cb60-3"></a>got_names[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Theon Greyjoy"     "Tyrion Lannister"  "Victarion Greyjoy"</code></pre>
 </div>
 </div>
-<p><br></p>
+<p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co"># create a named list</span></span>
-<span id="cb64-2"><a href="#cb64-2"></a>got_chars_named <span class="ot">&lt;-</span> <span class="fu">set_names</span>(got_chars, got_names)</span>
-<span id="cb64-3"><a href="#cb64-3"></a><span class="fu">str</span>(got_chars_named[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">max.level =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># create a named list</span></span>
+<span id="cb62-2"><a href="#cb62-2"></a>got_chars_named <span class="ot">&lt;-</span> <span class="fu">set_names</span>(got_chars, got_names)</span>
+<span id="cb62-3"><a href="#cb62-3"></a><span class="fu">str</span>(got_chars_named[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">max.level =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 3
  $ Theon Greyjoy    :List of 18
@@ -1698,10 +1689,10 @@ $playedBy
  $ Victarion Greyjoy:List of 18</code></pre>
 </div>
 </div>
-<p><br></p>
+<p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># create readable output</span></span>
-<span id="cb66-2"><a href="#cb66-2"></a><span class="fu">map_lgl</span>(got_chars_named, <span class="st">"alive"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co"># create readable output</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a><span class="fu">map_lgl</span>(got_chars_named, <span class="st">"alive"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Theon Greyjoy  Tyrion Lannister Victarion Greyjoy 
              TRUE              TRUE              TRUE </code></pre>
@@ -1725,8 +1716,8 @@ $playedBy
 <h2>Example: name propagation</h2>
 <p>With <code>tibble::enframe()</code>, a named list converts to a data frame with names &amp; list-column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>allegiances <span class="ot">&lt;-</span> <span class="fu">map</span>(got_chars_named, <span class="st">"allegiances"</span>)</span>
-<span id="cb68-2"><a href="#cb68-2"></a>tibble<span class="sc">::</span><span class="fu">enframe</span>(allegiances, <span class="at">value =</span> <span class="st">"allegiances"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>allegiances <span class="ot">&lt;-</span> <span class="fu">map</span>(got_chars_named, <span class="st">"allegiances"</span>)</span>
+<span id="cb66-2"><a href="#cb66-2"></a>tibble<span class="sc">::</span><span class="fu">enframe</span>(allegiances, <span class="at">value =</span> <span class="st">"allegiances"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 30 × 2
    name               allegiances
@@ -1752,26 +1743,26 @@ $playedBy
 <section id="review-3" class="slide level2">
 <h2>Review #3</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>got_names <span class="ot">&lt;-</span> <span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span>
-<span id="cb70-2"><a href="#cb70-2"></a>got_chars_named <span class="ot">&lt;-</span> <span class="fu">set_names</span>(got_chars, got_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>got_names <span class="ot">&lt;-</span> <span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span>
+<span id="cb68-2"><a href="#cb68-2"></a>got_chars_named <span class="ot">&lt;-</span> <span class="fu">set_names</span>(got_chars, got_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Set list names for a happier life.</p>
 <div class="fragment">
 <p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span>
-<span id="cb71-2"><a href="#cb71-2"></a><span class="fu">map_chr</span>(got_chars, <span class="dv">3</span>)</span>
-<span id="cb71-3"><a href="#cb71-3"></a><span class="fu">map_chr</span>(got_chars, <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>))</span>
-<span id="cb71-4"><a href="#cb71-4"></a><span class="fu">map_chr</span>(got_chars, <span class="fu">list</span>(<span class="st">"name"</span>, <span class="dv">1</span>))</span>
-<span id="cb71-5"><a href="#cb71-5"></a><span class="fu">map_chr</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"name"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span>
+<span id="cb69-2"><a href="#cb69-2"></a><span class="fu">map_chr</span>(got_chars, <span class="dv">3</span>)</span>
+<span id="cb69-3"><a href="#cb69-3"></a><span class="fu">map_chr</span>(got_chars, <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>))</span>
+<span id="cb69-4"><a href="#cb69-4"></a><span class="fu">map_chr</span>(got_chars, <span class="fu">list</span>(<span class="st">"name"</span>, <span class="dv">1</span>))</span>
+<span id="cb69-5"><a href="#cb69-5"></a><span class="fu">map_chr</span>(got_chars, <span class="sc">~</span> .x[[<span class="st">"name"</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are many ways to specify <code>.f</code>.</p>
 </div>
 <div class="fragment">
 <p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="fu">map</span>(sw_vehicles, <span class="st">"pilots"</span>, <span class="at">.default =</span> <span class="cn">NA</span>)</span>
-<span id="cb72-2"><a href="#cb72-2"></a><span class="fu">map_chr</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>), <span class="at">.default =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">map</span>(sw_vehicles, <span class="st">"pilots"</span>, <span class="at">.default =</span> <span class="cn">NA</span>)</span>
+<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">map_chr</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>), <span class="at">.default =</span> <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>.default</code> is useful for missing things.</p>
 </div>
@@ -1810,7 +1801,7 @@ $playedBy
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_629ff24e" style="top:-10%;right:-10%;" data-warnwhen="0">
+<div class="countdown" id="timer_629ffa26" style="top:-10%;right:-10%;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
@@ -1828,8 +1819,8 @@ $playedBy
 <h2>Additional arguments</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a>books <span class="ot">&lt;-</span> <span class="fu">map</span>(got_chars_named, <span class="st">"books"</span>) </span>
-<span id="cb73-2"><a href="#cb73-2"></a>books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>books <span class="ot">&lt;-</span> <span class="fu">map</span>(got_chars_named, <span class="st">"books"</span>) </span>
+<span id="cb71-2"><a href="#cb71-2"></a>books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$`Theon Greyjoy`
 [1] "A Game of Thrones" "A Storm of Swords" "A Feast for Crows"
@@ -1841,7 +1832,7 @@ $`Tyrion Lannister`
 <div class="fragment">
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="fu">map_chr</span>(books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="sc">~</span> <span class="fu">paste</span>(.x, <span class="at">collapse =</span> <span class="st">", "</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">map_chr</span>(books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="sc">~</span> <span class="fu">paste</span>(.x, <span class="at">collapse =</span> <span class="st">", "</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                            Theon Greyjoy 
 "A Game of Thrones, A Storm of Swords, A Feast for Crows" 
@@ -1858,8 +1849,8 @@ $`Tyrion Lannister`
 <h2><code>map(.x, .f, ...)</code></h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a>books <span class="ot">&lt;-</span> <span class="fu">map</span>(got_chars_named, <span class="st">"books"</span>) </span>
-<span id="cb77-2"><a href="#cb77-2"></a>books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a>books <span class="ot">&lt;-</span> <span class="fu">map</span>(got_chars_named, <span class="st">"books"</span>) </span>
+<span id="cb75-2"><a href="#cb75-2"></a>books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$`Theon Greyjoy`
 [1] "A Game of Thrones" "A Storm of Swords" "A Feast for Crows"
@@ -1870,7 +1861,7 @@ $`Tyrion Lannister`
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a><span class="fu">map_chr</span>(books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], paste, <span class="at">collapse =</span> <span class="st">", "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a><span class="fu">map_chr</span>(books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], paste, <span class="at">collapse =</span> <span class="st">", "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                            Theon Greyjoy 
 "A Game of Thrones, A Storm of Swords, A Feast for Crows" 
@@ -1898,8 +1889,8 @@ $`Tyrion Lannister`
 <section id="passing-arguments" class="slide level2">
 <h2>Passing arguments</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="co"># map(.x, .f, ...)</span></span>
-<span id="cb81-2"><a href="#cb81-2"></a><span class="fu">map_chr</span>(books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], paste, <span class="at">collapse =</span> <span class="st">", "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a><span class="co"># map(.x, .f, ...)</span></span>
+<span id="cb79-2"><a href="#cb79-2"></a><span class="fu">map_chr</span>(books[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], paste, <span class="at">collapse =</span> <span class="st">", "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 
@@ -1925,10 +1916,10 @@ $`Tyrion Lannister`
 <h3 id="so-yes">So, yes,</h3>
 <h3 id="there-are-many-ways-to-specify-.f.">there are many ways to specify <code>.f</code>.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span>
-<span id="cb82-2"><a href="#cb82-2"></a><span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span>
-<span id="cb82-3"><a href="#cb82-3"></a><span class="fu">map_chr</span>(books, paste, <span class="at">collapse =</span> <span class="st">", "</span>)</span>
-<span id="cb82-4"><a href="#cb82-4"></a><span class="fu">map</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a><span class="fu">map</span>(got_chars, <span class="sc">~</span> <span class="fu">length</span>(.x[[<span class="st">"aliases"</span>]]))</span>
+<span id="cb80-2"><a href="#cb80-2"></a><span class="fu">map_chr</span>(got_chars, <span class="st">"name"</span>)</span>
+<span id="cb80-3"><a href="#cb80-3"></a><span class="fu">map_chr</span>(books, paste, <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb80-4"><a href="#cb80-4"></a><span class="fu">map</span>(sw_vehicles, <span class="fu">list</span>(<span class="st">"pilots"</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="img/tutorial-purr.png" style="width:70.0%" class="r-stretch"><div class="footer">
@@ -1938,10 +1929,10 @@ $`Tyrion Lannister`
 <section id="walk" class="slide level2">
 <h2>Walk</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a>countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Argentina"</span>, <span class="st">"Brazil"</span>)</span>
-<span id="cb83-2"><a href="#cb83-2"></a>gap_small <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb83-3"><a href="#cb83-3"></a> <span class="fu">filter</span>(country <span class="sc">%in%</span> countries <span class="sc">&amp;</span> year <span class="sc">&gt;</span> <span class="dv">2000</span>)</span>
-<span id="cb83-4"><a href="#cb83-4"></a>gap_small</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a>countries <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Argentina"</span>, <span class="st">"Brazil"</span>)</span>
+<span id="cb81-2"><a href="#cb81-2"></a>gap_small <span class="ot">&lt;-</span> gapminder  <span class="sc">|&gt;</span> </span>
+<span id="cb81-3"><a href="#cb81-3"></a> <span class="fu">filter</span>(country <span class="sc">%in%</span> countries <span class="sc">&amp;</span> year <span class="sc">&gt;</span> <span class="dv">2000</span>)</span>
+<span id="cb81-4"><a href="#cb81-4"></a>gap_small</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 6
   country   continent  year lifeExp       pop gdpPercap
@@ -1957,20 +1948,20 @@ $`Tyrion Lannister`
 <div class="columns">
 <div class="column" style="width:65%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a>write_one <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb85-2"><a href="#cb85-2"></a> filename <span class="ot">&lt;-</span> <span class="fu">paste0</span>(x, <span class="st">".csv"</span>)</span>
-<span id="cb85-3"><a href="#cb85-3"></a> dataset <span class="ot">&lt;-</span> <span class="fu">filter</span>(gap_small, country <span class="sc">==</span> x)</span>
-<span id="cb85-4"><a href="#cb85-4"></a> <span class="fu">write_csv</span>(dataset, filename)</span>
-<span id="cb85-5"><a href="#cb85-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a>write_one <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb83-2"><a href="#cb83-2"></a> filename <span class="ot">&lt;-</span> <span class="fu">paste0</span>(x, <span class="st">".csv"</span>)</span>
+<span id="cb83-3"><a href="#cb83-3"></a> dataset <span class="ot">&lt;-</span> <span class="fu">filter</span>(gap_small, country <span class="sc">==</span> x)</span>
+<span id="cb83-4"><a href="#cb83-4"></a> <span class="fu">write_csv</span>(dataset, filename)</span>
+<span id="cb83-5"><a href="#cb83-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a><span class="fu">walk</span>(countries, write_one)</span>
-<span id="cb86-2"><a href="#cb86-2"></a><span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">"*.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="fu">walk</span>(countries, write_one)</span>
+<span id="cb84-2"><a href="#cb84-2"></a><span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">"*.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a><span class="co">#&gt; [1] "Argentina.csv" "Brazil.csv" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a><span class="co">#&gt; [1] "Argentina.csv" "Brazil.csv" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -1987,16 +1978,16 @@ $`Tyrion Lannister`
 <h3 id="map_dfr-rowbinds-a-list-of-data-frames"><code>map_dfr()</code> rowbinds a list of data frames</h3>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a>csv_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">"*.csv"</span>)</span>
-<span id="cb88-2"><a href="#cb88-2"></a>csv_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a>csv_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">"*.csv"</span>)</span>
+<span id="cb86-2"><a href="#cb86-2"></a>csv_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><brshort></brshort></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a><span class="co">#&gt; [1] "Argentina.csv" "Brazil.csv" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a><span class="co">#&gt; [1] "Argentina.csv" "Brazil.csv" </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a><span class="fu">map_dfr</span>(csv_files, <span class="sc">~</span> <span class="fu">read_csv</span>(.x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a><span class="fu">map_dfr</span>(csv_files, <span class="sc">~</span> <span class="fu">read_csv</span>(.x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><brshort></brshort></p>
 <div class="cell">
@@ -2011,6 +2002,10 @@ $`Tyrion Lannister`
 </div>
 </div>
 </section>
+<section id="map_dfr-smush" class="slide level2">
+<h2><code>map_dfr()</code> smush</h2>
+
+<img data-src="img/asmae_smush.png" class="r-stretch"></section>
 <section id="section-9" class="slide level2">
 <h2></h2>
 <p><br></p>
@@ -2065,8 +2060,8 @@ $`Tyrion Lannister`
 <h2></h2>
 <p><brshort></brshort></p>
 <div class="black-code-smaller">
-<p>minis %&gt;%</p>
-<p>&nbsp;&nbsp; map2(hair, enhair) %&gt;%</p>
+<p>minis |&gt;</p>
+<p>&nbsp;&nbsp; map2(hair, enhair) |&gt;</p>
 <p>&nbsp;&nbsp; map2(weapons, arm)</p>
 </div>
 <div class="footer">

@@ -80,9 +80,9 @@ Pretty recent?
 
 ## Pipes
 
--   2021+ (R $\geq$ 4.1.0) native R pipe `|>`
-
 -   2014+ magrittr pipe `%>%`
+
+-   2021+ (R $\geq$ 4.1.0) native R pipe `|>`
 
 2022 Isabella Velásquez Understanding the native R pipe \|\> <https://ivelasq.rbind.io/blog/understanding-the-r-pipe/>
 
@@ -99,14 +99,6 @@ arg1 |>
   whatever(arg2, arg3)
 ```
 
-<brshort>
-
-```{r echo=TRUE, eval=FALSE}
-whatever(arg1, arg2, arg3, ...)
-
-arg1 %>%
-  whatever(arg2, arg3)
-```
 :::
 
 ::: {.column width="5%"}
@@ -120,15 +112,17 @@ mean(0:10)
   mean()
 ```
 
-<brshort>
-
-```{r echo=TRUE, eval=FALSE}
-select(mtcars, mpg, cyl) 
-
-mtcars %>% 
-  select(mpg, cyl) 
-```
 :::
+:::
+
+
+::: footer
+Change `CTRL + Shift + M` shortcut to native pipe:
+
+`Tools -> Global Options -> Code -> `
+   
+&nbsp;&nbsp; `Editing -> check Use Native Pipe Operator`
+
 :::
 
 ## R for Data Science: Ch 18 Pipes
@@ -158,7 +152,7 @@ library(dplyr)
 
 select(mtcars, mpg, cyl) 
 
-mtcars %>% 
+mtcars |>  
   select(mpg, cyl) 
 ```
 :::
@@ -172,7 +166,7 @@ mtcars %>%
 
 dplyr::select(mtcars, mpg, cyl) 
 
-mtcars %>% 
+mtcars |>  
   dplyr::select(mpg, cyl) 
 ```
 :::
@@ -195,7 +189,7 @@ Hans Rosling discusses Gapminder data<br> <https://www.youtube.com/watch?v=hVimV
 ## Gapminder life expectancy
 
 ```{r}
-gapminder %>% 
+gapminder |>  
   ggplot(aes(x = year, y = lifeExp)) +
   geom_line(aes(group = country), color = "white") +
   facet_wrap(~ continent, ncol = 5) +
@@ -270,8 +264,8 @@ countdown(minutes = 1)
 ## An alternative solution
 
 ```{r, echo = TRUE, eval=FALSE}
-gapminder %>%
- group_by(continent) %>%
+gapminder |> 
+ group_by(continent) |> 
  summarize(max_minus_min = max(lifeExp) - min(lifeExp))
 ```
 
@@ -282,8 +276,8 @@ gapminder %>%
 `group_by` approach
 
 ```{r}
-gapminder %>%
- group_by(continent) %>%
+gapminder |> 
+ group_by(continent) |> 
  summarize(max_minus_min = max(lifeExp) - min(lifeExp))
 ```
 :::
@@ -1180,7 +1174,7 @@ got_names <- map_chr(got_chars, "name")
 got_names[1:3]
 ```
 
-<br>
+<brshort>
 
 ```{r, echo = TRUE, eval = TRUE}
 # create a named list
@@ -1188,7 +1182,7 @@ got_chars_named <- set_names(got_chars, got_names)
 str(got_chars_named[1:3], max.level = 1)
 ```
 
-<br>
+<brshort>
 
 ```{r, echo = TRUE, eval = TRUE}
 # create readable output
@@ -1421,7 +1415,7 @@ https://jennybc.github.io/purrr-tutorial/ls03_map-function-syntax.html#load_pack
 
 ```{r, echo=TRUE, eval=TRUE}
 countries <- c("Argentina", "Brazil")
-gap_small <- gapminder %>%
+gap_small <- gapminder  |> 
  filter(country %in% countries & year > 2000)
 gap_small
 ```
@@ -1498,10 +1492,19 @@ map_dfr(csv_files, ~ read_csv(.x))
 <brshort>
 
 ```{r,echo=FALSE, eval = TRUE}
-gap_small %>% 
-  mutate(across(c(country, continent), as.character)) %>% 
+gap_small |>  
+  mutate(across(c(country, continent), as.character)) |>  
   mutate_if(is.numeric, as.double)
 ```
+
+
+## `map_dfr()` smush
+
+![](img/asmae_smush.png)
+
+::: footer
+https://twitter.com/asmae_toumi/status/1364407122268729347
+:::
 
 ## 
 
@@ -1569,9 +1572,9 @@ map2(minis, weapons, arm)
 <brshort>
 
 ::: {.black-code-smaller}
-minis %>%
+minis |> 
 
-&nbsp;&nbsp; map2(hair, enhair) %>% 
+&nbsp;&nbsp; map2(hair, enhair) |>  
 
 &nbsp;&nbsp; map2(weapons, arm)
 :::
